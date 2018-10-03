@@ -1,0 +1,91 @@
+.card p {
+    margin: 0;
+    display: grid;
+}
+.info {
+    font-size: 1rem;
+}
+.minusFive {
+    background-color: var(--minus-five-color);
+}
+.minusThree {
+    background-color: var(--minus-three-color);
+}
+.minusOne {
+    background-color: var(--minus-one-color);
+}
+.zero {
+    background-color: var(--zero-color);
+}
+.plusOne {
+    background-color: var(--plus-one-color);
+}
+.plusThree {
+    background-color: var(--plus-three-color);
+}
+.plusFive {
+    background-color: var(--plus-five-color);
+}
+.sizeZero {
+    grid-area: span 1 / span 1;
+}
+.sizeZero p {
+    font-size: 0.8em;
+}
+.sizeThousand {
+    grid-area: span 2 / span 1;
+}
+.sizeThousand p {
+    font-size: 0.9em;
+}
+.sizeTenThousand {
+    grid-area: span 3 / span 1;
+}
+.sizeTenThousand p {
+    font-size: 1em;
+}
+.sizeHundredThousand {
+    grid-area: span 2 / span 2;
+}
+.sizeHundredThousand p {
+    font-size: 1.1em;    
+}
+.sizeMillion {
+    grid-area: span 5 / span 1;
+}
+.sizeMillion p {
+    font-size: 1.2em;
+}
+.sizeTenMillion {
+    grid-area: span 3 / span 2;
+}
+.sizeTenMillion p {
+    font-size: 1.3em;    
+}
+.sizeHundredMillion {
+    grid-area: span 4 / span 2;
+}
+.sizeHundredMillion p {
+    font-size: 1.4em;    
+}
+.sizeBillion {
+    grid-area: span 3 / span 3;
+}
+.sizeBillion p {
+    font-size: 1.6em;   
+}
+.sizeTenBillion {
+    grid-area: span 5 / span 2;
+}
+.sizeTenBillion p {
+    font-size: 1.8em;    
+}
+.sizeHundredBillion {
+    grid-area: span 6 / span 2;
+}
+.sizeHundredBillion p {
+    font-size: 2.5em;
+}
+.infoDiv p {
+    font-size: 1.2rem;
+}

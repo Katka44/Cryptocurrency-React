@@ -1,0 +1,20 @@
+:root {
+    --minus-five-color: #F63538;
+    --minus-three-color: #BF4045;
+    --minus-one-color: #8B444E;
+    --zero-color:#4F4554;
+    --plus-one-color: #35764E;
+    --plus-three-color: #2F9E4E;
+    --plus-five-color: #30CC5A;
+}
+body {
+    font-family: "Exo 2", sans-serif;
+    background-color: black;
+    color: white;
+    width: 80%;
+    min-width: 700px;
+    margin: auto;
+}
+.App {
+    text-align: center;
+}
