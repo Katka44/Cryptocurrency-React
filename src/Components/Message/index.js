@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './MessageDiv.css';
+import './Message.css';
 
 const MessageDiv = (props) => {
   const { message } = props;

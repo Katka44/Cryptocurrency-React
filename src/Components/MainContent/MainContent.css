@@ -6,3 +6,6 @@
     grid-auto-flow: row dense;
     margin-bottom: 200px;
 }
+.sorted {
+    grid-auto-flow: row;
+}

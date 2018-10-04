@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ButtonsDiv.css';
+import './Buttons.css';
 
 const ButtonsDiv = (props) => {
   const {

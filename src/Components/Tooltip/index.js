@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { SizeMe } from 'react-sizeme';
 import { left } from '../../handlers';
-import './InfoDiv.css';
+import './Tooltip.css';
 
 const InfoDiv = (props) => {
   const { hoveredObject, coordX, coordY } = props;

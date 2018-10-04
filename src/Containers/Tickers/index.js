@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Title from '../../Components/Title/Title';
-import ButtonsDiv from '../../Components/ButtonsDiv/ButtonsDiv';
-import MessageDiv from '../../Components/MessageDiv/MessageDiv';
-import ColorCodesDiv from '../../Components/ColorCodesDiv/ColorCodesDiv';
-import MainContent from '../../Components/MainContent/MainContent';
+import Title from '../../Components/Title';
+import ButtonsDiv from '../../Components/Buttons';
+import MessageDiv from '../../Components/Message';
+import ColorCodesDiv from '../../Components/ColorCodes';
+import Loader from '../../Components/Loader';
+import MainContent from '../../Components/MainContent';
 import {
   handleFilterFunc, sortName, sortValue, displayCategory,
 } from '../../handlers';
@@ -14,6 +15,7 @@ class Tickers extends Component {
     super(props);
 
     this.state = {
+      loading: false,
       data: [],
       manipulatedData: [],
       filter: '',
@@ -44,7 +46,7 @@ class Tickers extends Component {
   handleFilter = (newValue) => {
     const { data } = this.state;
     const filteredData = handleFilterFunc(data, newValue);
-    this.setState({ message: 'Data filtered.', manipulatedData: filteredData });
+    this.setState({ message: 'Data filtered.', manipulatedData: filteredData, sortBy: null });
   };
 
   handleTextChange = (e) => {
@@ -56,20 +58,23 @@ class Tickers extends Component {
   };
 
   fetchCryptocurrencyData() {
+    this.setState({ loading: true });
     axios.get('https://api.coinmarketcap.com/v1/ticker/?limit=1000')
       .then((response) => {
         const result = response.data;
-        this.setState({ data: result, manipulatedData: result });
+        this.setState({ data: result, manipulatedData: result, loading: false });
       })
       .catch((err) => { throw new Error(err); });
   }
 
   render() {
     const {
+      loading,
       data,
       manipulatedData,
       message,
       filter,
+      sortBy,
     } = this.state;
 
     return (
@@ -83,8 +88,9 @@ class Tickers extends Component {
           handleSort = {this.handleSort}/>
         <MessageDiv message={message}/>
         <ColorCodesDiv />
-        <MainContent
-          manipulatedData = {manipulatedData}/>
+        {loading ? <Loader /> : <MainContent
+          manipulatedData = {manipulatedData}
+          sortBy={sortBy}/>}
       </React.Fragment>
     );
   }

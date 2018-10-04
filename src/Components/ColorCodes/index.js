@@ -1,5 +1,5 @@
 import React from 'react';
-import './ColorCodesDiv.css';
+import './ColorCodes.css';
 
 const ColorCodesDiv = () => (
   <div id="colorCodesDiv">

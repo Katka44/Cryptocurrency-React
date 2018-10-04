@@ -2,9 +2,6 @@
     margin: 0;
     display: grid;
 }
-.info {
-    font-size: 1rem;
-}
 .minusFive {
     background-color: var(--minus-five-color);
 }

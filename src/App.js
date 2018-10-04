@@ -1,6 +1,6 @@
 import React from 'react';
-import Title from './Components/Title/Title';
-import Tickers from './Containers/Tickers/Tickers';
+import Title from './Components/Title';
+import Tickers from './Containers/Tickers';
 import './App.css';
 
 const App = () => (
