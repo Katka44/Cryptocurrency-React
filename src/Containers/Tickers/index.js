@@ -44,9 +44,10 @@ class Tickers extends Component {
   };
 
   handleFilter = (newValue) => {
-    const { data } = this.state;
+    const { data, filter } = this.state;
     const filteredData = handleFilterFunc(data, newValue);
-    this.setState({ message: 'Data filtered.', manipulatedData: filteredData, sortBy: null });
+    const message = filter ? 'Data filtered.' : '';
+    this.setState({ message, manipulatedData: filteredData, sortBy: null });
   };
 
   handleTextChange = (e) => {
