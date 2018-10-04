@@ -2,7 +2,7 @@
 
 Cryptocurrency visualization app. Fetches real-time data from API, displays core information about currencies. This app is primarily aimed at desktop users.
 
-Live version: [https://katka44.github.io/Cryptocurrency-App-React/](https://katka44.github.io/Cryptocurrency-App-React/)
+Live version: [https://katka44.github.io/Cryptocurrency-React/](https://katka44.github.io/Cryptocurrency-React/)
 
 ## Quick overview
 
