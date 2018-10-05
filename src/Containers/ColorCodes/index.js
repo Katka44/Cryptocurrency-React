@@ -4,7 +4,7 @@ import ColorCode from '../../Components/ColorCode';
 
 const ColorCodes = () => (
   <ColorCodesLayout
-    render={() => <ul title="Color indicates 24h stock price change.">
+    render={() => <ul title="Color indicates 24h price change.">
       <ColorCode text="-5%" className="minusFive" />
       <ColorCode text="-3%" className="minusThree" />
       <ColorCode text="-1%" className="minusOne" />

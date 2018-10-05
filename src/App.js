@@ -7,7 +7,7 @@ const App = () => (
   <div className="App">
     <Title
       size="h1"
-      text="Cryptocurrency App" />
+      text="Crypto Dashboard" />
     <Main />
   </div>
 );
