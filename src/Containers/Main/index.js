@@ -3,7 +3,7 @@ import axios from 'axios';
 import Title from '../../Components/Title';
 import Buttons from '../Buttons';
 import MessageDiv from '../../Components/Message';
-import ColorCodesDiv from '../../Components/ColorCodes';
+import ColorCodes from '../ColorCodes';
 import Loader from '../../Components/Loader';
 import Tickers from '../../Components/Tickers';
 import {
@@ -106,7 +106,7 @@ class Main extends Component {
           handleTextChange={this.handleTextChange}
           handleSort = {this.handleSort}/>
         <MessageDiv message={message}/>
-        <ColorCodesDiv />
+        <ColorCodes />
         {loading ? <Loader /> : <Tickers
           manipulatedData = {manipulatedData}
           sortBy={sortBy}/>}
