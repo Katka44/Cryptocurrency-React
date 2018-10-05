@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import CardLayout from '../../Components/CardLayout';
+import CardLayout from '../../Components/Layouts/CardLayout';
+import CardContent from '../../Components/CardContent';
 
 class Card extends Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class Card extends Component {
 
     return (
       <CardLayout
+        render={props => <CardContent {...props} />}
         data={data}
         hoveredObject={hoveredObject}
         coordX={coordX}

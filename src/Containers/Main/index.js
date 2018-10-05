@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Title from '../../Components/Title';
-import ButtonsDiv from '../../Components/Buttons';
+import Buttons from '../Buttons';
 import MessageDiv from '../../Components/Message';
 import ColorCodesDiv from '../../Components/ColorCodes';
 import Loader from '../../Components/Loader';
-import MainContent from '../../Components/MainContent';
+import Tickers from '../../Components/Tickers';
 import {
   handleFilterFunc, sortName, sortValue, displayCategory,
 } from '../../handlers';
 
-class Tickers extends Component {
+class Main extends Component {
   constructor(props) {
     super(props);
 
@@ -19,11 +19,8 @@ class Tickers extends Component {
       data: [],
       manipulatedData: [],
       filter: '',
-      sortBy: {
-        title: 'rank',
-        order: 'ascending',
-      },
-      message: 'Data sorted by rank in ascending order.',
+      sortBy: null,
+      message: '',
     };
   }
 
@@ -33,14 +30,35 @@ class Tickers extends Component {
 
   handleSort = (category) => {
     const { sortBy, data } = this.state;
-    const order = sortBy === null || (sortBy.title !== category) || (sortBy.title === category && sortBy.order === 'descending') ? 'ascending' : 'descending';
-    const sortedArray = category === 'name' ? sortName(data, order) : sortValue(data, order, category);
-    this.setState({
-      sortBy: { title: category, order },
-      manipulatedData: sortedArray,
-      filter: '',
-      message: `Data sorted by ${displayCategory(category)} in ${order} order.`,
-    });
+    let order;
+    if (sortBy === null || (sortBy.title !== category)) {
+      order = 'ascending';
+      const sortedArray = category === 'name' ? sortName(data, order) : sortValue(data, order, category);
+      this.setState({
+        sortBy: { title: category, order },
+        manipulatedData: sortedArray,
+        filter: '',
+        message: `Data sorted by ${displayCategory(category)} in ${order} order.`,
+      });
+    }
+    if (sortBy && sortBy.title === category && sortBy.order === 'ascending') {
+      order = 'descending';
+      const sortedArray = category === 'name' ? sortName(data, order) : sortValue(data, order, category);
+      this.setState({
+        sortBy: { title: category, order },
+        manipulatedData: sortedArray,
+        filter: '',
+        message: `Data sorted by ${displayCategory(category)} in ${order} order.`,
+      });
+    }
+    if (sortBy && sortBy.title === category && sortBy.order === 'descending') {
+      const sortedArray = sortValue(data, 'ascending', 'rank');
+      this.setState({
+        sortBy: null,
+        manipulatedData: sortedArray,
+        message: '',
+      });
+    }
   };
 
   handleFilter = (newValue) => {
@@ -60,7 +78,7 @@ class Tickers extends Component {
 
   fetchCryptocurrencyData() {
     this.setState({ loading: true });
-    axios.get('https://api.coinmarketcap.com/v1/ticker/?limit=1000')
+    axios.get('https://api.coinmarketcap.com/v1/ticker/?limit=2500')
       .then((response) => {
         const result = response.data;
         this.setState({ data: result, manipulatedData: result, loading: false });
@@ -83,13 +101,13 @@ class Tickers extends Component {
         <Title
           size="h3"
           text={`There are ${data.length} coins on the market`} />
-        <ButtonsDiv
+        <Buttons
           filter={filter}
           handleTextChange={this.handleTextChange}
           handleSort = {this.handleSort}/>
         <MessageDiv message={message}/>
         <ColorCodesDiv />
-        {loading ? <Loader /> : <MainContent
+        {loading ? <Loader /> : <Tickers
           manipulatedData = {manipulatedData}
           sortBy={sortBy}/>}
       </React.Fragment>
@@ -97,4 +115,4 @@ class Tickers extends Component {
   }
 }
 
-export default Tickers;
+export default Main;

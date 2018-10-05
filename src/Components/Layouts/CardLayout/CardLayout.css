@@ -39,49 +39,49 @@
     grid-area: span 3 / span 1;
 }
 .sizeTenThousand p {
-    font-size: 1em;
+    font-size: 1.0em;
 }
 .sizeHundredThousand {
     grid-area: span 2 / span 2;
 }
 .sizeHundredThousand p {
-    font-size: 1.1em;    
+    font-size: 1.0em;    
 }
 .sizeMillion {
     grid-area: span 5 / span 1;
 }
 .sizeMillion p {
-    font-size: 1.2em;
+    font-size: 1.0em;
 }
 .sizeTenMillion {
     grid-area: span 3 / span 2;
 }
 .sizeTenMillion p {
-    font-size: 1.3em;    
+    font-size: 1.1em;    
 }
 .sizeHundredMillion {
     grid-area: span 4 / span 2;
 }
 .sizeHundredMillion p {
-    font-size: 1.4em;    
+    font-size: 1.2em;    
 }
 .sizeBillion {
     grid-area: span 3 / span 3;
 }
 .sizeBillion p {
-    font-size: 1.6em;   
+    font-size: 1.3em;   
 }
 .sizeTenBillion {
     grid-area: span 5 / span 2;
 }
 .sizeTenBillion p {
-    font-size: 1.8em;    
+    font-size: 1.4em;    
 }
 .sizeHundredBillion {
     grid-area: span 6 / span 2;
 }
 .sizeHundredBillion p {
-    font-size: 2.5em;
+    font-size: 1.5em;
 }
 .infoDiv p {
     font-size: 1.2rem;

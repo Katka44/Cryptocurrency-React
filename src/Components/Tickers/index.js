@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../../Containers/Card';
-import './MainContent.css';
+import './Tickers.css';
 
-const MainContent = (props) => {
+const Tickers = (props) => {
   const { manipulatedData, sortBy } = props;
 
   const tickers = manipulatedData.map(currency => <Card
@@ -17,13 +17,13 @@ const MainContent = (props) => {
   );
 };
 
-MainContent.propTypes = {
+Tickers.propTypes = {
   manipulatedData: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   sortBy: PropTypes.shape({}),
 };
 
-MainContent.defaultProps = {
+Tickers.defaultProps = {
   sortBy: null,
 };
 
-export default MainContent;
+export default Tickers;

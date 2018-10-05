@@ -2,7 +2,7 @@ import React from 'react';
 import './ColorCodes.css';
 
 const ColorCodesDiv = () => (
-  <div id="colorCodesDiv">
+  <div className="colorCodesDiv">
     <ul title="Color indicates 24h stock price change.">
       <li className="minusFive">-5%</li>
       <li className="minusThree">-3%</li>
