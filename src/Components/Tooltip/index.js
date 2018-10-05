@@ -16,8 +16,8 @@ const InfoDiv = (props) => {
           <p className="infoName">{hoveredObject.name}</p>
           <p className="infoPrice">${hoveredObject.price_usd}</p>
           <p>Rank: {hoveredObject.rank}</p>
-          <p>1h change: {hoveredObject.percent_change_1h}$</p>
-          <p>24h change: {hoveredObject.percent_change_24h}$</p>
+          <p>1h change: {hoveredObject.percent_change_1h}%</p>
+          <p>24h change: {hoveredObject.percent_change_24h}%</p>
       </div>}
     </SizeMe>
   );

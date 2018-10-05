@@ -96,6 +96,7 @@ class Main extends Component {
       sortBy,
     } = this.state;
 
+    console.log(data)
     return (
       <React.Fragment>
         <Title
