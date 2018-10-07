@@ -15,7 +15,6 @@ class Main extends Component {
     super(props);
 
     this.state = {
-      loading: false,
       data: [],
       manipulatedData: [],
       filter: '',
@@ -24,8 +23,14 @@ class Main extends Component {
     };
   }
 
-  componentDidMount() {
-    this.fetchCryptocurrencyData();
+  async componentDidMount() {
+    try {
+      setInterval(async () => {
+        this.fetchCryptocurrencyData();
+      }, 10000);
+    } catch (error) {
+      throw new Error(error);
+    }
   }
 
   handleSort = (category) => {
@@ -77,18 +82,16 @@ class Main extends Component {
   };
 
   fetchCryptocurrencyData() {
-    this.setState({ loading: true });
     axios.get('https://api.coinmarketcap.com/v1/ticker/?limit=2500')
       .then((response) => {
         const result = response.data;
-        this.setState({ data: result, manipulatedData: result, loading: false });
+        this.setState({ data: result, manipulatedData: result });
       })
       .catch((err) => { throw new Error(err); });
   }
 
   render() {
     const {
-      loading,
       data,
       manipulatedData,
       message,
@@ -107,7 +110,7 @@ class Main extends Component {
           handleSort = {this.handleSort}/>
         <Message message={message}/>
         <ColorCodes />
-        {loading ? <Loader /> : <Tickers
+        {!data.length ? <Loader /> : <Tickers
           manipulatedData = {manipulatedData}
           sortBy={sortBy}/>}
       </React.Fragment>
