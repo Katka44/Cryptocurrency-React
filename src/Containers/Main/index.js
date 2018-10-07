@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Title from '../../Components/Title';
 import Buttons from '../Buttons';
-import MessageDiv from '../../Components/Message';
+import Message from '../../Components/Message';
 import ColorCodes from '../ColorCodes';
 import Loader from '../../Components/Loader';
 import Tickers from '../../Components/Tickers';
@@ -105,7 +105,7 @@ class Main extends Component {
           filter={filter}
           handleTextChange={this.handleTextChange}
           handleSort = {this.handleSort}/>
-        <MessageDiv message={message}/>
+        <Message message={message}/>
         <ColorCodes />
         {loading ? <Loader /> : <Tickers
           manipulatedData = {manipulatedData}
