@@ -1,22 +1,18 @@
 input {
+    height: 32px;
     background-color: transparent;
-    border-left: none;
-    border-right: none;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
+    border: none;
     color: white;
     padding-left: 8px;
     padding-right: 8px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    box-sizing: content-box;
 }
 input::placeholder {
     font-family: 'Exo 2', sans-serif;
+    font-size: 0.8rem;
     color: grey;
 }
 input:focus {
-    border-top: 1px solid var(--plus-three-color);
-    border-bottom: 1px solid var(--plus-three-color);
     outline: none;
 }
 input:focus::placeholder {
