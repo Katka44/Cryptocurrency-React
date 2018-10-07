@@ -1,6 +1,14 @@
 h1 {
-    margin: 30px 0 40px 0;
+    margin: 30px 0 10px 0;
 }
 h1, h2, h3 {
     font-weight: normal;
+}
+.line{ 
+    display:block;
+    border:none;
+    color: var(--plus-three-color);
+    height:1px;
+    background: var(--plus-three-color);
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#2F9E4E), to(#000));
 }

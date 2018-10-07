@@ -8,6 +8,7 @@ const Title = (props) => {
     : size === 'h2';
   return (<div>
     {size === 'h1' || size === 'h2' ? title : <h3>{text}</h3> }
+      {size === 'h1' ? <hr className="line" /> : null}
       </div>
   );
 };
