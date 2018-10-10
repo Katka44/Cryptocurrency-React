@@ -4,7 +4,7 @@ import { SizeMe } from 'react-sizeme';
 import { left } from '../../handlers';
 import './Tooltip.css';
 
-const InfoDiv = (props) => {
+const Tooltip = (props) => {
   const tooltipGap = 100;
   const { hoveredObject, coordX, coordY } = props;
   return (
@@ -23,16 +23,16 @@ const InfoDiv = (props) => {
   );
 };
 
-InfoDiv.propTypes = {
+Tooltip.propTypes = {
   hoveredObject: PropTypes.shape({}),
   coordX: PropTypes.number,
   coordY: PropTypes.number,
 };
 
-InfoDiv.defaultProps = {
+Tooltip.defaultProps = {
   hoveredObject: null,
   coordX: null,
   coordY: null,
 };
 
-export default InfoDiv;
+export default Tooltip;

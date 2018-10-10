@@ -11,13 +11,33 @@ const Buttons = (props) => {
     handleSort,
   } = props;
 
+  const content = [
+    {
+      text: 'Sort By Name',
+      category: 'name',
+    },
+    {
+      text: 'Sort By Price',
+      category: 'price_usd',
+    },
+    {
+      text: 'Sort By Rank',
+      category: 'rank',
+    },
+    {
+      text: 'Sort By Performance',
+      category: 'percent_change_24h',
+    },
+  ];
+
   return (
     <ButtonsLayout
       render={() => <React.Fragment>
-        <Button text="Sort By Name" handleClick={handleSort} category="name"/>
-        <Button text="Sort By Price" handleClick={handleSort} category="price_usd"/>
-        <Button text="Sort By Rank" handleClick={handleSort} category="rank"/>
-        <Button text="Sort By Performance" handleClick={handleSort} category="percent_change_24h"/>
+        {content.map(item => <Button
+            key={item.category}
+            text={item.text}
+            handleClick={handleSort}
+            category={item.category}/>)}
         <Input
           placeholder="Filter by name or ticker"
           name="filter"

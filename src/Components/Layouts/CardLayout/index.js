@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import InfoDiv from '../../Tooltip';
+import Tooltip from '../../Tooltip';
 import { getPerformanceClass, getSizeClass } from '../../../handlers';
 import './CardLayout.css';
 
@@ -30,7 +30,7 @@ const CardLayout = (props) => {
         size,
       })}
       {Object.keys(hoveredObject).length > 0 && hoveredObject.constructor === Object
-        ? <InfoDiv
+        ? <Tooltip
             hoveredObject={hoveredObject}
             coordX={coordX}
             coordY={coordY} />

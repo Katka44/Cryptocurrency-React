@@ -17,7 +17,7 @@ const ButtonsLayout = (props) => {
         filter,
         handleTextChange,
       })}
-  </div>
+    </div>
   );
 };
 

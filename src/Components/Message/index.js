@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Message.css';
 
-const MessageDiv = (props) => {
+const Message = (props) => {
   const { message } = props;
   return (
     <div className="messageDiv">
@@ -11,8 +11,8 @@ const MessageDiv = (props) => {
   );
 };
 
-MessageDiv.propTypes = {
+Message.propTypes = {
   message: PropTypes.string.isRequired,
 };
 
-export default MessageDiv;
+export default Message;

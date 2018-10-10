@@ -5,9 +5,8 @@ import './ColorCodesLayout.css';
 const ColorCodesLayout = (props) => {
   const { render } = props;
   return <div className="colorCodesDiv">
-  {render({
-  })}
-</div>;
+    {render()}
+  </div>;
 };
 
 ColorCodesLayout.propTypes = {
