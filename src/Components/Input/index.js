@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FadedLine from '../FadedLine';
 import './Input.scss';
 
 const Input = (props) => {
@@ -12,11 +11,7 @@ const Input = (props) => {
   } = props;
 
   return (
-    <div className="input">
-      <FadedLine />
-      <input value={value} onChange={(e) => { handleChange(e); } } type="text" name={name} placeholder={placeholder}/>
-      <FadedLine />
-    </div>
+    <input value={value} onChange={(e) => { handleChange(e); } } type="text" name={name} placeholder={placeholder}/>
   );
 };
 

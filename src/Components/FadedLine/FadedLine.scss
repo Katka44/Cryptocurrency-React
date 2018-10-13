@@ -4,9 +4,9 @@
     background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#2F9E4E), to(#000));
     margin: 0;
 }
-.button .line, .input .line {
+.FadedLinesLayout .line {
     background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from(grey), to(#000));
 }
-.button:hover .line, .input:hover .line {
+.FadedLinesLayout:hover .line {
     background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from(var(--plus-three-color)), to(#000));
 }

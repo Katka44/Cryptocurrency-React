@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FadedLine from '../FadedLine';
 import './Button.scss';
 
 const Button = (props) => {
@@ -12,11 +11,7 @@ const Button = (props) => {
   } = props;
 
   return (
-    <div className="button">
-      <FadedLine />
-      <button onClick={() => handleClick(data, category)} type="button">{text}</button>
-      <FadedLine />
-    </div>
+    <button onClick={() => handleClick(data, category)} type="button">{text}</button>
   );
 };
 

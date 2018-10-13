@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ButtonsLayout from '../../Components/Layouts/ButtonsLayout';
+import FadedLinesLayout from '../../Components/Layouts/FadedLinesLayout';
 import Button from '../../Components/Button';
 import Input from '../../Components/Input';
 
@@ -34,17 +35,21 @@ const Buttons = (props) => {
   return (
     <ButtonsLayout
       render={() => <React.Fragment>
-        {content.map(item => <Button
-          data={data}
+        {content.map(item => <FadedLinesLayout
           key={item.category}
-          text={item.text}
-          handleClick={handleSort}
-          category={item.category}/>)}
-        <Input
-          placeholder="Filter by name or ticker"
-          name="filter"
-          value={filter}
-          handleChange={handleTextChange}/>
+          render={() => <Button
+            data={data}
+            text={item.text}
+            handleClick={handleSort}
+            category={item.category}/>}
+          />)}
+        <FadedLinesLayout
+          render={() => <Input
+            placeholder="Filter by name or ticker"
+            name="filter"
+            value={filter}
+            handleChange={handleTextChange}/>}
+          />
       </React.Fragment>}/>
   );
 };
@@ -54,7 +59,6 @@ Buttons.propTypes = {
   filter: PropTypes.string.isRequired,
   handleTextChange: PropTypes.func.isRequired,
   handleSort: PropTypes.func.isRequired,
-
 };
 
 Buttons.defaultProps = {
