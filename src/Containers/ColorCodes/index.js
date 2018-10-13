@@ -35,7 +35,7 @@ const ColorCodes = () => {
   ];
 
   return <ColorCodesLayout
-    render={() => <ul title="Color indicates 24h price change.">
+    render={() => <ul>
       {
         content.map(item => <ColorCode
           key={item.className}

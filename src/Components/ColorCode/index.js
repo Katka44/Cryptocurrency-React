@@ -4,7 +4,9 @@ import './ColorCode.scss';
 
 const ColorCode = (props) => {
   const { text, className } = props;
-  return <li className={className}>{text}</li>;
+  return <li
+    className={className}
+    title="Color indicates 24h price change.">{text}</li>;
 };
 
 ColorCode.propTypes = {
