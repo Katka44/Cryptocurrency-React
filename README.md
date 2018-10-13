@@ -1,4 +1,4 @@
-# Cryptocurrency App - React
+# Crypto Dashboard
 
 Cryptocurrency visualization app. Fetches real-time data from API, displays core information about currencies. This app is primarily aimed at desktop users.
 
