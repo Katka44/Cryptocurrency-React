@@ -45,7 +45,6 @@ It automatically deploys the app and shows it in the browser as [http://localhos
 
 - [React](https://reactjs.org/)
 - [Create React App](https://github.com/facebook/create-react-app/blob/master/README.md#getting-started)
-- [React Router DOM](https://www.npmjs.com/package/react-router-dom)
 
 ## Authors
 
