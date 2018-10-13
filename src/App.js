@@ -1,7 +1,7 @@
 import React from 'react';
 import Title from './Components/Title';
 import Main from './Containers/Main';
-import './App.css';
+import './App.scss';
 
 const App = () => (
   <div className="App">

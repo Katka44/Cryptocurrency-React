@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Tooltip from '../../Tooltip';
 import { getPerformanceClass, getSizeClass } from '../../../handlers';
-import './CardLayout.css';
+import './CardLayout.scss';
 
 const CardLayout = (props) => {
   const {

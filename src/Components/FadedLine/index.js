@@ -1,5 +1,5 @@
 import React from 'react';
-import './FadedLine.css';
+import './FadedLine.scss';
 
 const FadedLine = () => <hr className="line" />;
 

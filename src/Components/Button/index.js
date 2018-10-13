@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FadedLine from '../FadedLine';
-import './Button.css';
+import './Button.scss';
 
 const Button = (props) => {
   const {

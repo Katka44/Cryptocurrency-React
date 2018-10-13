@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { SizeMe } from 'react-sizeme';
 import { left } from '../../handlers';
-import './Tooltip.css';
+import './Tooltip.scss';
 
 const Tooltip = (props) => {
   const tooltipGap = 100;

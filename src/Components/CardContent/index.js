@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { addPlus } from '../../handlers';
-import './CardContent.css';
+import './CardContent.scss';
 
 const CardContent = (props) => {
   const { data, size } = props;

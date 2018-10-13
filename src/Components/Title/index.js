@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FadedLine from '../FadedLine';
-import './Title.css';
+import './Title.scss';
 
 const Title = (props) => {
   const { size, text } = props;
