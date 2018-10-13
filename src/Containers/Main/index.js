@@ -38,30 +38,26 @@ class Main extends Component {
     let order;
     if (sortBy === null || (sortBy.title !== category)) {
       order = 'ascending';
-      const sortedArray = category === 'name' ? sortName(data, order) : sortValue(data, order, category);
-      this.setState({
-        sortBy: { title: category, order },
-        manipulatedData: sortedArray,
-        filter: '',
-        message: `Data sorted by ${displayCategory(category)} in ${order} order.`,
-      });
     }
     if (sortBy && sortBy.title === category && sortBy.order === 'ascending') {
       order = 'descending';
-      const sortedArray = category === 'name' ? sortName(data, order) : sortValue(data, order, category);
-      this.setState({
-        sortBy: { title: category, order },
-        manipulatedData: sortedArray,
-        filter: '',
-        message: `Data sorted by ${displayCategory(category)} in ${order} order.`,
-      });
     }
     if (sortBy && sortBy.title === category && sortBy.order === 'descending') {
+      order = null;
+    }
+    if (!order) {
       const sortedArray = sortValue(data, 'ascending', 'rank');
       this.setState({
         sortBy: null,
         manipulatedData: sortedArray,
         message: '',
+      });
+    } else {
+      const sortedArray = category === 'name' ? sortName(data, order) : sortValue(data, order, category);
+      this.setState({
+        sortBy: { title: category, order },
+        manipulatedData: sortedArray,
+        message: `Data sorted by ${displayCategory(category)} in ${order} order.`,
       });
     }
   };
