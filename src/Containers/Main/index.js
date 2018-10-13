@@ -56,6 +56,7 @@ class Main extends Component {
       const sortedArray = category === 'name' ? sortName(data, order) : sortValue(data, order, category);
       this.setState({
         sortBy: { title: category, order },
+        filter: '',
         manipulatedData: sortedArray,
         message: `Data sorted by ${displayCategory(category)} in ${order} order.`,
       });
