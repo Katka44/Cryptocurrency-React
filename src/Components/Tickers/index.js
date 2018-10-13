@@ -10,6 +10,7 @@ const Tickers = (props) => {
     data={currency}
     key={currency.id}/>);
 
+  
   return (
     <div>
       <ul className={sortBy ? 'sorted tickers' : 'tickers'}>{tickers}</ul>

@@ -6,6 +6,7 @@ import Input from '../../Components/Input';
 
 const Buttons = (props) => {
   const {
+    data,
     filter,
     handleTextChange,
     handleSort,
@@ -34,27 +35,30 @@ const Buttons = (props) => {
     <ButtonsLayout
       render={() => <React.Fragment>
         {content.map(item => <Button
-            key={item.category}
-            text={item.text}
-            handleClick={handleSort}
-            category={item.category}/>)}
+          data={data}
+          key={item.category}
+          text={item.text}
+          handleClick={handleSort}
+          category={item.category}/>)}
         <Input
           placeholder="Filter by name or ticker"
           name="filter"
           value={filter}
           handleChange={handleTextChange}/>
-      </React.Fragment>}
-      handleSort={handleSort}
-      filter={filter}
-      handleTextChange={handleTextChange}/>
+      </React.Fragment>}/>
   );
 };
 
 Buttons.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({})),
   filter: PropTypes.string.isRequired,
   handleTextChange: PropTypes.func.isRequired,
   handleSort: PropTypes.func.isRequired,
 
+};
+
+Buttons.defaultProps = {
+  data: null,
 };
 
 export default Buttons;

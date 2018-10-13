@@ -23,18 +23,18 @@ class Main extends Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount = async () => {
     try {
       setInterval(async () => {
-        this.fetchCryptocurrencyData();
+        this.fetchData();
       }, 10000);
     } catch (error) {
       throw new Error(error);
     }
   }
 
-  handleSort = (category) => {
-    const { sortBy, data } = this.state;
+  handleSort = (data, category) => {
+    const { sortBy } = this.state;
     let order;
     if (sortBy === null || (sortBy.title !== category)) {
       order = 'ascending';
@@ -66,31 +66,46 @@ class Main extends Component {
     }
   };
 
-  handleFilter = (newValue) => {
-    const { data, filter } = this.state;
-    const filteredData = handleFilterFunc(data, newValue);
+  handleFilter = (data, string) => {
+    const { filter } = this.state;
+    const filteredData = handleFilterFunc(data, string);
     const message = filter ? 'Data filtered.' : '';
     this.setState({ message, manipulatedData: filteredData, sortBy: null });
   };
 
   handleTextChange = (e) => {
+    const { data } = this.state;
     const field = e.target.name;
     const newValue = e.target.value;
     this.setState({ [field]: newValue }, () => {
-      this.handleFilter(newValue);
+      this.handleFilter(data, newValue);
     });
   };
 
-  fetchCryptocurrencyData() {
+  manipulateOnMount = (data) => {
+    const { filter, sortBy } = this.state;
+    if (filter) {
+      return handleFilterFunc(data, filter);
+    }
+    if (sortBy && sortBy.title === 'name') {
+      return sortName(data, sortBy.order);
+    }
+    if (sortBy && sortBy.title !== 'name') {
+      return sortValue(data, sortBy.order, sortBy.title);
+    }
+    return data;
+  };
+
+  fetchData = () => {
     axios.get('https://api.coinmarketcap.com/v1/ticker/?limit=2500')
       .then((response) => {
         const result = response.data;
-        this.setState({ data: result, manipulatedData: result });
+        this.setState({ data: result, manipulatedData: this.manipulateOnMount(result) });
       })
       .catch((err) => { throw new Error(err); });
   }
 
-  render() {
+  render = () => {
     const {
       data,
       manipulatedData,
@@ -105,6 +120,7 @@ class Main extends Component {
           size="h3"
           text={`There are ${data.length} coins on the market`} />
         <Buttons
+          data={data}
           filter={filter}
           handleTextChange={this.handleTextChange}
           handleSort = {this.handleSort}/>

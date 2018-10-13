@@ -5,6 +5,8 @@ import './CardContent.css';
 
 const CardContent = (props) => {
   const { data, size } = props;
+
+  // eslint-disable-next-line camelcase
   const { symbol, percent_change_24h } = data;
   return (
     <li>

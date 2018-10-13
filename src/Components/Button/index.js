@@ -5,6 +5,7 @@ import './Button.css';
 
 const Button = (props) => {
   const {
+    data,
     text,
     handleClick,
     category,
@@ -13,17 +14,21 @@ const Button = (props) => {
   return (
     <div className="button">
       <FadedLine />
-      <button onClick={() => handleClick(category)} type="button">{text}</button>
+      <button onClick={() => handleClick(data, category)} type="button">{text}</button>
       <FadedLine />
     </div>
   );
 };
 
 Button.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({})),
   text: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,
   category: PropTypes.string.isRequired,
+};
 
+Button.defaultProps = {
+  data: null,
 };
 
 export default Button;

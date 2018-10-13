@@ -16,6 +16,8 @@ const CardLayout = (props) => {
     resetHover,
     handleHover,
   } = props;
+
+  // eslint-disable-next-line camelcase
   const { percent_change_24h, market_cap_usd } = data;
   const size = getSizeClass(market_cap_usd);
 
