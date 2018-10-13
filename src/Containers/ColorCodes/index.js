@@ -36,12 +36,10 @@ const ColorCodes = () => {
 
   return <ColorCodesLayout
     render={() => <ul>
-      {
-        content.map(item => <ColorCode
-          key={item.className}
-          text={item.text}
-          className={item.className} />)
-      }
+      {content.map(item => <ColorCode
+        key={item.className}
+        text={item.text}
+        className={item.className} />)}
     </ul>}/>;
 };
 
