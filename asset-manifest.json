@@ -1,7 +1,14 @@
 {
-  "main.css": "static/css/main.8bb5ea32.css",
-  "main.css.map": "static/css/main.8bb5ea32.css.map",
-  "main.js": "static/js/main.06b5a203.js",
-  "main.js.map": "static/js/main.06b5a203.js.map",
-  "static\\media\\loader.svg": "static/media/loader.4d106d48.svg"
+  "main.css": "/Cryptocurrency-React/static/css/main.c69f50b3.chunk.css",
+  "main.js": "/Cryptocurrency-React/static/js/main.fa340b49.chunk.js",
+  "main.js.map": "/Cryptocurrency-React/static/js/main.fa340b49.chunk.js.map",
+  "static/js/1.a84be553.chunk.js": "/Cryptocurrency-React/static/js/1.a84be553.chunk.js",
+  "static/js/1.a84be553.chunk.js.map": "/Cryptocurrency-React/static/js/1.a84be553.chunk.js.map",
+  "runtime~main.js": "/Cryptocurrency-React/static/js/runtime~main.9e2c5a18.js",
+  "runtime~main.js.map": "/Cryptocurrency-React/static/js/runtime~main.9e2c5a18.js.map",
+  "static/media/loader.svg": "/Cryptocurrency-React/static/media/loader.4d106d48.svg",
+  "static/css/main.c69f50b3.chunk.css.map": "/Cryptocurrency-React/static/css/main.c69f50b3.chunk.css.map",
+  "index.html": "/Cryptocurrency-React/index.html",
+  "precache-manifest.aafd7f20144a7032dab4957d17780acc.js": "/Cryptocurrency-React/precache-manifest.aafd7f20144a7032dab4957d17780acc.js",
+  "service-worker.js": "/Cryptocurrency-React/service-worker.js"
 }
