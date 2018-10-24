@@ -6,17 +6,39 @@ import { left } from '../../handlers';
 const Tooltip = (props) => {
   const tooltipGap = 100;
   const { hoveredObject, coordX, coordY } = props;
+
+  const render = [
+    {
+      className: 'Tooltip__content',
+      child: `${hoveredObject.symbol}`,
+    },
+    {
+      className: 'Tooltip__content Tooltip__name',
+      child: `${hoveredObject.name}`,
+    },
+    {
+      className: 'Tooltip__content Tooltip__price',
+      child: `$${hoveredObject.price_usd}`,
+    },
+    {
+      className: 'Tooltip__content',
+      child: `Rank: ${hoveredObject.rank}`,
+    },
+    {
+      className: 'Tooltip__content',
+      child: `1h change: ${hoveredObject.percent_change_1h}%`,
+    },
+    {
+      className: 'Tooltip__content',
+      child: `24h change: ${hoveredObject.percent_change_24h}%`,
+    },
+  ];
   return (
     <SizeMe>
       {({ size }) => <div
         style={{ top: coordY, left: left(size.width, coordX, tooltipGap) }}
         className="Tooltip animate">
-        <p className="Tooltip__content">{hoveredObject.symbol}</p>
-        <p className="Tooltip__content Tooltip__name">{hoveredObject.name}</p>
-        <p className="Tooltip__content Tooltip__price">${hoveredObject.price_usd}</p>
-        <p className="Tooltip__content">Rank: {hoveredObject.rank}</p>
-        <p className="Tooltip__content">1h change: {hoveredObject.percent_change_1h}%</p>
-        <p className="Tooltip__content">24h change: {hoveredObject.percent_change_24h}%</p>
+        {render.map(element => <p className={element.className}>{element.child}</p>)}
       </div>}
     </SizeMe>
   );
