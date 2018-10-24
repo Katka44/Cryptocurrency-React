@@ -68,53 +68,53 @@ export const addPlus = (number) => {
 
 export const getPerformanceClass = (performance) => {
   if (performance <= -5) {
-    return ' minusFive';
+    return 'minus-five';
   }
   if (performance <= -3) {
-    return ' minusThree';
+    return 'minus-three';
   }
   if (performance <= -1) {
-    return ' minusOne';
+    return 'minus-one';
   }
   if (performance <= 1) {
-    return ' zero';
+    return 'zero';
   }
   if (performance <= 3) {
-    return ' plusOne';
+    return 'plus-one';
   }
   if (performance <= 5) {
-    return ' plusThree';
+    return 'plus-three';
   }
-  return ' plusFive';
+  return 'plus-five';
 };
 
 export const getSizeClass = (marketCap) => {
   if (marketCap <= 1000) {
-    return ' sizeZero';
+    return 'size-zero';
   }
   if (marketCap <= 10000) {
-    return ' sizeThousand';
+    return 'size-thousand';
   }
   if (marketCap <= 100000) {
-    return ' sizeTenThousand';
+    return 'size-ten-thousand';
   }
   if (marketCap <= 1000000) {
-    return ' sizeHundredThousand';
+    return 'size-hundred-thousand';
   }
   if (marketCap <= 10000000) {
-    return ' sizeMillion';
+    return 'size-million';
   }
   if (marketCap <= 100000000) {
-    return ' sizeTenMillion';
+    return 'size-ten-million';
   }
   if (marketCap <= 1000000000) {
-    return ' sizeHundredMillion';
+    return 'size-hundred-million';
   }
   if (marketCap <= 10000000000) {
-    return ' sizeBillion';
+    return 'size-billion';
   }
   if (marketCap <= 100000000000) {
-    return ' sizeTenBillion';
+    return 'size-ten-billion';
   }
-  return ' sizeHundredBillion';
+  return 'size-hundred-billion';
 };

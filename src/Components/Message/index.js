@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Message.scss';
 
 const Message = (props) => {
   const { message } = props;
   return (
-    <div className="messageDiv">
-        <p>{message}</p>
+    <div className="Message">
+      <p className="Message__text">{message}</p>
     </div>
   );
 };

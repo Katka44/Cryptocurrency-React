@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Button.scss';
 
 const Button = (props) => {
   const {
@@ -11,7 +10,7 @@ const Button = (props) => {
   } = props;
 
   return (
-    <button onClick={() => handleClick(data, category)} type="button">{text}</button>
+    <button className="Button" onClick={() => handleClick(data, category)} type="button">{text}</button>
   );
 };
 

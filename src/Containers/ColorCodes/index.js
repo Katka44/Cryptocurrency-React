@@ -6,15 +6,15 @@ const ColorCodes = () => {
   const content = [
     {
       text: '-5%',
-      className: 'minusFive',
+      className: 'minus-five',
     },
     {
       text: '-3%',
-      className: 'minusThree',
+      className: 'minus-three',
     },
     {
       text: '-1%',
-      className: 'minusOne',
+      className: 'minus-one',
     },
     {
       text: '0%',
@@ -22,15 +22,15 @@ const ColorCodes = () => {
     },
     {
       text: '1%',
-      className: 'plusOne',
+      className: 'plus-one',
     },
     {
       text: '3%',
-      className: 'plusThree',
+      className: 'plus-three',
     },
     {
       text: '5%',
-      className: 'plusFive',
+      className: 'plus-five',
     },
   ];
 

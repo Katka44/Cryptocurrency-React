@@ -45,20 +45,20 @@ class Main extends Component {
     if (sortBy && sortBy.title === category && sortBy.order === 'descending') {
       order = null;
     }
-    if (!order) {
-      const sortedArray = sortValue(data, 'ascending', 'rank');
-      this.setState({
-        sortBy: null,
-        manipulatedData: sortedArray,
-        message: '',
-      });
-    } else {
+    if (order) {
       const sortedArray = category === 'name' ? sortName(data, order) : sortValue(data, order, category);
       this.setState({
         sortBy: { title: category, order },
         filter: '',
         manipulatedData: sortedArray,
         message: `Data sorted by ${displayCategory(category)} in ${order} order.`,
+      });
+    } else {
+      const sortedArray = sortValue(data, 'ascending', 'rank');
+      this.setState({
+        sortBy: null,
+        manipulatedData: sortedArray,
+        message: '',
       });
     }
   };
@@ -79,7 +79,7 @@ class Main extends Component {
     });
   };
 
-  manipulateOnMount = (data) => {
+  manipulateOnRefetch = (data) => {
     const { filter, sortBy } = this.state;
     if (filter) {
       return handleFilterFunc(data, filter);
@@ -97,7 +97,7 @@ class Main extends Component {
     axios.get('https://api.coinmarketcap.com/v1/ticker/?limit=2500')
       .then((response) => {
         const result = response.data;
-        this.setState({ data: result, manipulatedData: this.manipulateOnMount(result) });
+        this.setState({ data: result, manipulatedData: this.manipulateOnRefetch(result) });
       })
       .catch((err) => { throw new Error(err); });
   }

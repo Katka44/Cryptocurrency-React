@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { addPlus } from '../../handlers';
-import './CardContent.scss';
 
 const CardContent = (props) => {
   const { data, size } = props;
@@ -10,7 +9,9 @@ const CardContent = (props) => {
   const { symbol, percent_change_24h } = data;
   return (
     <li>
-      {size !== ' sizeZero' ? <p className="info">{symbol} {addPlus(percent_change_24h)}%</p> : null}
+      {size !== 'size-zero'
+        ? <p className={`Card-content Card-content--${size}`}>{symbol} {addPlus(percent_change_24h)}%</p>
+        : null}
     </li>
   );
 };

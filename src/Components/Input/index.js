@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Input.scss';
 
 const Input = (props) => {
   const {
@@ -11,7 +10,13 @@ const Input = (props) => {
   } = props;
 
   return (
-    <input value={value} onChange={(e) => { handleChange(e); } } type="text" name={name} placeholder={placeholder}/>
+    <input
+      className="Input"
+      type="text"
+      name={name}
+      value={value}
+      onChange={(e) => { handleChange(e); } }
+      placeholder={placeholder}/>
   );
 };
 

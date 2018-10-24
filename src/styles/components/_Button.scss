@@ -1,0 +1,14 @@
+.Button {
+  height: 32px;
+  font-family: $main-font-family;
+  cursor: pointer;
+  background-color: $background-color;
+  font-size: $button-input-font-size;
+  color: $primary-color;
+  border: none;
+  padding: 8px;
+  
+  &:focus {
+    outline: none;
+  }
+}

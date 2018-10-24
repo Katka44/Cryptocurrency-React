@@ -1,0 +1,110 @@
+// function returns a set of background-color styles
+
+$minus-five: 'minus-five';
+$minus-three: 'minus-three';
+$minus-one: 'minus-one';
+$zero: 'zero';
+$plus-one: 'plus-one';
+$plus-three: 'plus-three';
+$plus-five: 'plus-five';
+
+$color-list: (
+  minus-five: $minus-five,
+  minus-three: $minus-three,
+  minus-one: $minus-one,
+  zero: $zero,
+  plus-one: $plus-one,
+  plus-three: $plus-three,
+  plus-five: $plus-five,
+);
+
+@each $key, $val in $color-list {
+  .#{$key} {
+    background-color: #{$val}-color;
+  }
+}
+
+
+// should return
+// .minus-five {
+//   background-color: $minus-five-color;
+// }
+// ...
+
+
+// function returns a set of grid-area styles
+
+$span1-span1: span 1 / span 1;
+$span2-span1: span 2 / span 1;
+$span3-span1: span 3 / span 1;
+$span2-span2: span 2 / span 2;
+$span5-span1: span 5 / span 1;
+$span3-span2: span 3 / span 2;
+$span4-span2: span 4 / span 2;
+$span3-span3: span 3 / span 3;
+$span5-span2: span 5 / span 2;
+$span6-span2: span 6 / span 2;
+
+$size-list: (
+  size-zero: $span1-span1,
+  size-thousand: $span2-span1,
+  size-ten-thousand: $span3-span1,
+  size-hundred-thousand: $span2-span2,
+  size-million: $span5-span1,
+  size-ten-million: $span3-span2,
+  size-hundred-million: $span4-span2,
+  size-billion: $span3-span3,
+  size-ten-billion: $span5-span2,
+  size-hundred-billion: $span6-span2,
+);
+
+@each $key, $val in $size-list {
+  .#{$key} {
+    grid-area: #{$val};
+  }
+}
+
+
+// should return
+// .size-zero {
+//   grid-area: span 1 / span 1;
+// }
+// ...
+
+
+// function returns a set of font-size styles
+
+$rem08: 0.8rem;
+$rem09: 0.9rem;
+$rem10: 1.0rem;
+$rem11: 1.1rem;
+$rem12: 1.2rem;
+$rem13: 1.3rem;
+$rem14: 1.4rem;
+$rem15: 1.5rem;
+
+$size-font-list: (
+  size-zero: $rem08,
+  size-thousand: $rem09,
+  size-ten-thousand: $rem10,
+  size-hundred-thousand: $rem10,
+  size-million: $rem10,
+  size-ten-million: $rem11,
+  size-hundred-million: $rem12,
+  size-billion: $rem13,
+  size-ten-billion: $rem14,
+  size-hundred-billion: $rem15,
+);
+
+@each $key, $val in $size-font-list {
+  .Card-content--#{$key} {
+    font-size: #{$val};
+  }
+}
+
+
+// should return
+// .Card-content--size-zero {
+//   font-size: 0.8rem;
+// }
+// ...

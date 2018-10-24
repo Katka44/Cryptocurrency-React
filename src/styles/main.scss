@@ -1,0 +1,44 @@
+// import variables
+
+@import './variables/variables';
+
+// import mixins
+
+
+// import functions
+
+@import './functions/functions';
+
+// import style sheets
+
+@import './components/Button';
+@import './components/ButtonsLayout';
+@import './components/CardLayout';
+@import './components/ColorCode';
+@import './components/FadedLine';
+@import './components/Input';
+@import './components/Message';
+@import './components/Tickers';
+@import './components/Title';
+@import './components/Tooltip';
+
+// App.js style
+
+body {
+  font-family: $main-font-family;
+  background-color: $background-color;
+  color: $primary-color;
+  width: 80%;
+  min-width: 700px;
+  margin: auto;
+}
+.App {
+  text-align: center;
+}
+ul {
+  list-style: none;
+  justify-content: center;
+  cursor: context-menu;
+  display: flex;
+  padding: 0;
+}

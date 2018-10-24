@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Tooltip from '../../Tooltip';
 import { getPerformanceClass, getSizeClass } from '../../../handlers';
-import './CardLayout.scss';
 
 const CardLayout = (props) => {
   const {
@@ -23,7 +22,7 @@ const CardLayout = (props) => {
 
   return (
     <div
-      className={`card ${performance} ${size}`}
+      className={`${performance} ${size}`}
       onMouseEnter={() => setHover(data)}
       onMouseMove={e => handleHover(e)}
       onMouseLeave={resetHover} >

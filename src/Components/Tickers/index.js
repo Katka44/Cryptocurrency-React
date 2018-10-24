@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../../Containers/Card';
-import './Tickers.scss';
 
 const Tickers = (props) => {
   const { manipulatedData, sortBy } = props;
@@ -12,7 +11,7 @@ const Tickers = (props) => {
 
   return (
     <div>
-      <ul className={sortBy ? 'sorted tickers' : 'tickers'}>{tickers}</ul>
+      <ul className={sortBy ? 'Tickers Tickers--sorted' : 'Tickers'}>{tickers}</ul>
     </div>
   );
 };
