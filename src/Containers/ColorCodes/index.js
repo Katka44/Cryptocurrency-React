@@ -3,7 +3,7 @@ import ColorCodesLayout from '../../Components/Layouts/ColorCodesLayout';
 import ColorCode from '../../Components/ColorCode';
 
 const ColorCodes = () => {
-  const content = [
+  const render = [
     {
       text: '-5%',
       className: 'minus-five',
@@ -36,7 +36,7 @@ const ColorCodes = () => {
 
   return <ColorCodesLayout
     render={() => <ul>
-      {content.map(item => <ColorCode
+      {render.map(item => <ColorCode
         key={item.className}
         text={item.text}
         className={item.className} />)}

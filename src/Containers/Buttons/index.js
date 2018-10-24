@@ -13,7 +13,7 @@ const Buttons = (props) => {
     handleSort,
   } = props;
 
-  const content = [
+  const render = [
     {
       text: 'Sort By Name',
       category: 'name',
@@ -35,7 +35,7 @@ const Buttons = (props) => {
   return (
     <ButtonsLayout
       render={() => <React.Fragment>
-        {content.map(item => <FadedLinesLayout
+        {render.map(item => <FadedLinesLayout
           key={item.category}
           render={() => <Button
             data={data}

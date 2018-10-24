@@ -38,7 +38,9 @@ const Tooltip = (props) => {
       {({ size }) => <div
         style={{ top: coordY, left: left(size.width, coordX, tooltipGap) }}
         className="Tooltip animate">
-        {render.map(element => <p className={element.className}>{element.child}</p>)}
+        {render.map(element => <p
+          key={`${element.className}${element.child}`}
+          className={element.className}>{element.child}</p>)}
       </div>}
     </SizeMe>
   );

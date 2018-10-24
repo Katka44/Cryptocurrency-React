@@ -5,13 +5,13 @@ import Card from '../../Containers/Card';
 const Tickers = (props) => {
   const { manipulatedData, sortBy } = props;
 
-  const tickers = manipulatedData.map(currency => <Card
+  const render = manipulatedData.map(currency => <Card
     data={currency}
     key={currency.id}/>);
 
   return (
     <div>
-      <ul className={sortBy ? 'Tickers Tickers--sorted' : 'Tickers'}>{tickers}</ul>
+      <ul className={sortBy ? 'Tickers Tickers--sorted' : 'Tickers'}>{render}</ul>
     </div>
   );
 };

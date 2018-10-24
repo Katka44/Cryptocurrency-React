@@ -4,7 +4,7 @@ import FadedLine from '../FadedLine';
 
 const Title = (props) => {
   const { size, text } = props;
-  const title = size === 'h1' ? <h1 className={size}>{text}</h1> : <h2 className={size}>{text}</h2>;
+  const title = size === 'h1' ? <h1 className={`Title__${size}`}>{text}</h1> : <h2 className={`Title__${size}`}>{text}</h2>;
 
   return <div>
       {size === 'h1' || size === 'h2' ? title : <h3 className={`Title__${size}`}>{text}</h3> }
