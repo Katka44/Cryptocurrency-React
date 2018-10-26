@@ -94,7 +94,7 @@ class Main extends Component {
   };
 
   fetchData = () => {
-    axios.get('https://api.coinmarketcap.com/v1/ticker/?limit=250')
+    axios.get('https://api.coinmarketcap.com/v1/ticker/?limit=2500')
       .then((response) => {
         const result = response.data;
         this.setState({ data: result, manipulatedData: this.manipulateOnRefetch(result) });
