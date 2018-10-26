@@ -1,24 +1,55 @@
-// colors according to performance
-/*
-.minus-five {
-  background-color: $minus-five-color;
+
+// function returns a set of grid-area styles
+
+$size-list: (
+  size-zero: span 1 / span 1,
+  size-thousand: span 2 / span 1,
+  size-ten-thousand: span 3 / span 1,
+  size-hundred-thousand: span 2 / span 2,
+  size-million: span 5 / span 1,
+  size-ten-million: span 3 / span 2,
+  size-hundred-million: span 4 / span 2,
+  size-billion: span 3 / span 3,
+  size-ten-billion: span 5 / span 2,
+  size-hundred-billion: span 6 / span 2,
+);
+
+@each $key, $val in $size-list {
+  .#{$key} {
+    grid-area: #{$val};
+  }
 }
-.minus-three {
-  background-color: $minus-three-color;
+
+// returns
+// .size-zero {
+//   grid-area: span 1 / span 1;
+// }
+// ...
+
+
+// function returns a set of font-size styles
+
+$size-font-list: (
+  size-zero: 0.8rem,
+  size-thousand: 0.9rem,
+  size-ten-thousand: 1.0rem,
+  size-hundred-thousand: 1.0rem,
+  size-million: 1.0rem,
+  size-ten-million: 1.1rem,
+  size-hundred-million: 1.2rem,
+  size-billion: 1.3rem,
+  size-ten-billion: 1.4rem,
+  size-hundred-billion: 1.5rem,
+);
+
+@each $key, $val in $size-font-list {
+  .Card-content--#{$key} {
+    font-size: #{$val};
+  }
 }
-.minus-one {
-  background-color: $minus-one-color;
-}
-.zero {
-  background-color: $zero-color;
-}
-.plus-one {
-  background-color: $plus-one-color;
-}
-.plus-three {
-  background-color: $plus-three-color;
-}
-.plus-five {
-  background-color: $plus-five-color;
-}
-*/
+
+// returns
+// .Card-content--size-zero {
+//   font-size: 0.8rem;
+// }
+// ...

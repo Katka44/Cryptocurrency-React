@@ -4,7 +4,7 @@ Cryptocurrency visualization app. Fetches real-time data from API, displays core
 
 Live version: [https://katka44.github.io/Cryptocurrency-React/](https://katka44.github.io/Cryptocurrency-React/)
 
-## Quick overview
+## Quick Overview
 
 ```
 npm install
@@ -31,7 +31,7 @@ yarn
 
 will install all required modules needed to run the app.
 
-## Running the application
+## Running the Application
 
 ```
 npm start
@@ -49,3 +49,8 @@ It automatically deploys the app and shows it in the browser as [http://localhos
 ## Authors
 
 - Katarina Khan
+
+## Future Features
+
+- Watchlist
+- Login
