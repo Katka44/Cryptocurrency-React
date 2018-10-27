@@ -22,17 +22,6 @@ class Main extends Component {
       message: '',
     };
   }
-/*
-  componentDidMount = () => {
-    try {
-      setInterval(async () => {
-        this.fetchData();
-      }, 10000);
-    } catch (error) {
-      throw new Error(error);
-    }
-  }
-*/
 
   componentDidMount = () => {
     setInterval(() => {
