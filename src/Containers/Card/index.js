@@ -15,8 +15,7 @@ class Card extends Component {
   }
 
   updateCoords = (newX, newY) => {
-    this.setState({ coordX: newX, coordY: newY }, () => {
-    });
+    this.setState({ coordX: newX, coordY: newY });
   }
 
   setHover = (object) => {

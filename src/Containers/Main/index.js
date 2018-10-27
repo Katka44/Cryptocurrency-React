@@ -22,8 +22,8 @@ class Main extends Component {
       message: '',
     };
   }
-
-  componentDidMount = async () => {
+/*
+  componentDidMount = () => {
     try {
       setInterval(async () => {
         this.fetchData();
@@ -31,6 +31,13 @@ class Main extends Component {
     } catch (error) {
       throw new Error(error);
     }
+  }
+*/
+
+  componentDidMount = () => {
+    setInterval(() => {
+      this.fetchData();
+    }, 5000);
   }
 
   handleSort = (data, category) => {
@@ -94,7 +101,7 @@ class Main extends Component {
   };
 
   fetchData = () => {
-    axios.get('https://api.coinmarketcap.com/v1/ticker/?limit=2500')
+    axios.get('https://api.coinmarketcap.com/v1/ticker/?limit=25')
       .then((response) => {
         const result = response.data;
         this.setState({ data: result, manipulatedData: this.manipulateOnRefetch(result) });
