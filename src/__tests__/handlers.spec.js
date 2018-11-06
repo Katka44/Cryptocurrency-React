@@ -24,10 +24,13 @@ describe('handlers', () => {
   });
   describe('sortName', () => {
     describe('nameA > nameB', () => {
-      const data = [
-        { name: 'Ethereum', symbol: 'ETH' },
-        { name: 'Bitcoin', symbol: 'BTC' },
-      ];
+      let data;
+      beforeEach(() => {
+        data = [
+          { name: 'Ethereum', symbol: 'ETH' },
+          { name: 'Bitcoin', symbol: 'BTC' },
+        ];
+      });
       it('should return sorted array by name in ascending order', () => {
         const order = 'ascending';
         const result = [
@@ -46,10 +49,13 @@ describe('handlers', () => {
       });
     });
     describe('nameB > nameA', () => {
-      const data = [
-        { name: 'Bitcoin', symbol: 'BTC' },
-        { name: 'Ethereum', symbol: 'ETH' },
-      ];
+      let data;
+      beforeEach(() => {
+        data = [
+          { name: 'Bitcoin', symbol: 'BTC' },
+          { name: 'Ethereum', symbol: 'ETH' },
+        ];
+      });
       it('should return sorted array by name in ascending order', () => {
         const order = 'ascending';
         const result = [

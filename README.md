@@ -52,5 +52,6 @@ It automatically deploys the app and shows it in the browser as [http://localhos
 
 ## Future Features
 
+- Mobile view
 - Watchlist
 - Login
