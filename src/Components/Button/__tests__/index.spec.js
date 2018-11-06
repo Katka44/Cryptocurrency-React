@@ -18,7 +18,7 @@ describe('Button component', () => {
     const className = 'Button';
     expect(wrapper.find('button').hasClass(className)).toEqual(true);
   });
-  it('should contain a button with props.text as child element', () => {
+  it('should contain a button with props.text as text', () => {
     const text = 'random text';
     expect(wrapper.find('.Button').text()).toEqual(text);
   });
