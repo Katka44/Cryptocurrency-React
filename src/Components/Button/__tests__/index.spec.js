@@ -24,7 +24,7 @@ describe('Button component', () => {
   });
   it('should call handleClick when button is clicked', () => {
     const mockHandleClick = jest.fn();
-    wrapper.setProps('handleClick', mockHandleClick);
+    wrapper.setProps({ handleClick: mockHandleClick });
     wrapper.find('button').simulate('click');
     expect(mockHandleClick).toHaveBeenCalled();
   });

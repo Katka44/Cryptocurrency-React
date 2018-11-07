@@ -6,7 +6,7 @@ const ButtonsLayout = (props) => {
 
   return (
     <div className="ButtonsLayout">
-      {render({})}
+      {render()}
     </div>
   );
 };
