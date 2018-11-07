@@ -20,6 +20,7 @@ class Main extends Component {
       filter: '',
       sortBy: null,
       message: '',
+      isListView: true,
     };
   }
 
@@ -105,6 +106,7 @@ class Main extends Component {
       message,
       filter,
       sortBy,
+      isListView,
     } = this.state;
 
     return (
@@ -118,10 +120,11 @@ class Main extends Component {
           handleTextChange={this.handleTextChange}
           handleSort = {this.handleSort}/>
         <Message message={message}/>
-        <ColorCodes />
+        <ColorCodes isListView={isListView}/>
         {!data.length ? <Loader /> : <Tickers
           manipulatedData = {manipulatedData}
-          sortBy={sortBy}/>}
+          sortBy={sortBy}
+          isListView={isListView}/>}
       </React.Fragment>
     );
   }

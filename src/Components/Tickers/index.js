@@ -1,17 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../../Containers/Card';
+import TableRow from '../TableRow';
+import { addPlus } from '../../handlers';
 
 const Tickers = (props) => {
-  const { manipulatedData, sortBy } = props;
+  const renderCards = (data) => {
+    const render = data.map(currency => <Card
+      data={currency}
+      key={currency.id}/>);
+    return render;
+  };
 
-  const render = manipulatedData.map(currency => <Card
-    data={currency}
-    key={currency.id}/>);
+  const renderTable = (data) => {
+    const render = <div className="Tickers-table">
+      <TableRow
+        isHeader
+        rank="Rank"
+        symbol="Symbol"
+        name="Name"
+        price="Price"
+        change1h="1hr change"
+        change24h="24hr change"/>
+      {data.map(currency => <TableRow
+        rank={currency.rank}
+        symbol={currency.symbol}
+        name={currency.name}
+        price={`$${currency.price_usd}`}
+        change1h={currency.percent_change_1h}
+        change24h={currency.percent_change_24h}/>)}
+    </div>;
+    return render;
+  };
 
+  const { manipulatedData, sortBy, isListView } = props;
   return (
     <div>
-      <ul className={sortBy ? 'Tickers Tickers--sorted' : 'Tickers'}>{render}</ul>
+      {isListView
+        ? renderTable(manipulatedData)
+        : <ul className={sortBy ? 'Tickers-grid Tickers-grid--sorted' : 'Tickers-grid'}>{renderCards(manipulatedData)}</ul>}
     </div>
   );
 };
@@ -19,6 +46,7 @@ const Tickers = (props) => {
 Tickers.propTypes = {
   manipulatedData: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   sortBy: PropTypes.shape({}),
+  isListView: PropTypes.bool.isRequired,
 };
 
 Tickers.defaultProps = {

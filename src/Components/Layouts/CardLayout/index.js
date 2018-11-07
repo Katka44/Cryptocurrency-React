@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Tooltip from '../../Tooltip';
-import { getPerformanceClass, getSizeClass } from '../../../handlers';
+import { getPerformanceClass, addCardToString, getSizeClass } from '../../../handlers';
 
 const CardLayout = (props) => {
   const {
@@ -18,13 +18,13 @@ const CardLayout = (props) => {
   // eslint-disable-next-line camelcase
   const { percent_change_24h, market_cap_usd } = data;
   const size = getSizeClass(market_cap_usd);
-  const performance = getPerformanceClass(percent_change_24h);
+  const performance = addCardToString(getPerformanceClass(percent_change_24h));
 
   return (
     <div
       className={`${performance} ${size}`}
       onMouseEnter={() => setHover(data)}
-      onMouseMove={e => handleHover(e)}
+      onMouseMove={handleHover}
       onMouseLeave={resetHover} >
       {render({
         data,

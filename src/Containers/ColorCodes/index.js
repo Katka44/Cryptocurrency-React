@@ -1,46 +1,61 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ColorCodesLayout from '../../Components/Layouts/ColorCodesLayout';
 import ColorCode from '../../Components/ColorCode';
 
-const ColorCodes = () => {
+const ColorCodes = (props) => {
+  const { isListView } = props;
   const render = [
     {
       text: '-5%',
-      className: 'minus-five',
+      classNameCardView: 'minus-five-card',
+      classNameListView: 'minus-five-list',
     },
     {
       text: '-3%',
-      className: 'minus-three',
+      classNameCardView: 'minus-three-card',
+      classNameListView: 'minus-three-list',
+
     },
     {
       text: '-1%',
-      className: 'minus-one',
+      classNameCardView: 'minus-one-card',
+      classNameListView: 'minus-one-list',
     },
     {
       text: '0%',
-      className: 'zero',
+      classNameCardView: 'zero-card',
+      classNameListView: 'zero-list',
     },
     {
       text: '1%',
-      className: 'plus-one',
+      classNameCardView: 'plus-one-card',
+      classNameListView: 'plus-one-list',
     },
     {
       text: '3%',
-      className: 'plus-three',
+      classNameCardView: 'plus-three-card',
+      classNameListView: 'plus-three-list',
     },
     {
       text: '5%',
-      className: 'plus-five',
+      classNameCardView: 'plus-five-card',
+      classNameListView: 'plus-five-list',
     },
   ];
 
   return <ColorCodesLayout
     render={() => <ul>
       {render.map(item => <ColorCode
-        key={item.className}
+        key={item.text}
         text={item.text}
-        className={item.className} />)}
+        className={isListView ? item.classNameListView : item.classNameCardView}
+        isListView={isListView}/>)}
     </ul>}/>;
+};
+
+ColorCodes.propTypes = {
+  isListView: PropTypes.bool.isRequired,
 };
 
 export default ColorCodes;

@@ -88,6 +88,11 @@ export const getPerformanceClass = (performance) => {
   return 'plus-five';
 };
 
+export const addCardToString = string => `${string}-card`;
+
+export const addListToString = string => `${string}-list`;
+
+
 export const getSizeClass = (marketCap) => {
   if (marketCap <= 1000) {
     return 'size-zero';
