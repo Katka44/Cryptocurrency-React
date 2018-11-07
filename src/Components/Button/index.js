@@ -10,7 +10,10 @@ const Button = (props) => {
   } = props;
 
   return (
-    <button className="Button" onClick={() => handleClick(data, category)} type="button">{text}</button>
+    <button
+      className="Button"
+      onClick={() => handleClick(data, category)}
+      type="button">{text}</button>
   );
 };
 

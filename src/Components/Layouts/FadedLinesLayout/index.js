@@ -7,7 +7,7 @@ const FadedLinesLayout = (props) => {
   return (
     <div className="Faded-lines-layout">
       <FadedLine />
-      {render({})}
+      {render()}
       <FadedLine />
     </div>
   );
