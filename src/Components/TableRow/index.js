@@ -4,7 +4,7 @@ import { getPerformanceClass, addListToString, addPlus } from '../../handlers';
 
 const TableRow = (props) => {
   const {
-    isHeader, rank, symbol, name, price, change1h, change24h,
+    isHeader, rank, symbol, name, price, change1h, change24h, change7d,
   } = props;
 
   const performance = priceChange => addListToString(getPerformanceClass(priceChange));
@@ -16,6 +16,7 @@ const TableRow = (props) => {
     <p>{price}</p>
     <p className={isHeader ? '' : performance(change1h)}>{isHeader ? change1h : `${addPlus(change1h)}%`}</p>
     <p className={isHeader ? '' : performance(change24h)}>{isHeader ? change24h : `${addPlus(change24h)}%`}</p>
+    <p className={isHeader ? '' : performance(change7d)}>{isHeader ? change7d : `${addPlus(change7d)}%`}</p>
   </div>;
 };
 
@@ -25,12 +26,16 @@ TableRow.propTypes = {
   symbol: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  change1h: PropTypes.string.isRequired,
-  change24h: PropTypes.string.isRequired,
+  change1h: PropTypes.string,
+  change24h: PropTypes.string,
+  change7d: PropTypes.string,
 };
 
 TableRow.defaultProps = {
   isHeader: false,
+  change1h: null,
+  change24h: null,
+  change7d: null,
 };
 
 export default TableRow;

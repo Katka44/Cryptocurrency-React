@@ -25,6 +25,11 @@
 
 // App.js style
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: $main-font-family;
   background-color: $background-color;

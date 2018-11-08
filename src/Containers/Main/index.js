@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { StickyContainer, Sticky } from 'react-sticky';
 import Title from '../../Components/Title';
 import Buttons from '../Buttons';
 import Message from '../../Components/Message';
@@ -85,7 +86,6 @@ class Main extends Component {
     this.setState(prevState => ({
       isListView: !prevState.isListView,
     }));
-    console.log();
   };
 
   manipulateOnRefetch = (data) => {
@@ -122,24 +122,29 @@ class Main extends Component {
     } = this.state;
 
     return (
-      <React.Fragment>
+      <StickyContainer>
         <Title
           size="h3"
           text={`There are ${data.length} coins on the market`} />
-        <Buttons
-          data={data}
-          filter={filter}
-          handleTextChange={this.handleTextChange}
-          handleSort = {this.handleSort}
-          isListView={isListView}
-          toggleListView={this.toggleListView}/>
-        <Message message={message}/>
+        <Sticky>
+          {({ style }) => (
+            <div style={style}>
+              <Buttons
+              data={data}
+              filter={filter}
+              handleTextChange={this.handleTextChange}
+              handleSort = {this.handleSort}
+              isListView={isListView}
+              toggleListView={this.toggleListView}/>
+              <Message message={message}/>
+            </div>)}
+        </Sticky>
         <ColorCodes isListView={isListView}/>
-        {!data.length ? <Loader /> : <Tickers
-          manipulatedData = {manipulatedData}
-          sortBy={sortBy}
-          isListView={isListView}/>}
-      </React.Fragment>
+          {!data.length ? <Loader /> : <Tickers
+            manipulatedData = {manipulatedData}
+            sortBy={sortBy}
+            isListView={isListView}/>}
+      </StickyContainer>
     );
   }
 }

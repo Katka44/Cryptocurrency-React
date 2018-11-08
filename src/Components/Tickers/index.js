@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../../Containers/Card';
 import TableRow from '../TableRow';
-import { addPlus } from '../../handlers';
 
 const Tickers = (props) => {
   const renderCards = (data) => {
@@ -21,14 +20,17 @@ const Tickers = (props) => {
         name="Name"
         price="Price"
         change1h="1hr change"
-        change24h="24hr change"/>
+        change24h="24hr change"
+        change7d="7d change"/>
       {data.map(currency => <TableRow
+        key={currency.rank}
         rank={currency.rank}
         symbol={currency.symbol}
         name={currency.name}
         price={`$${currency.price_usd}`}
         change1h={currency.percent_change_1h}
-        change24h={currency.percent_change_24h}/>)}
+        change24h={currency.percent_change_24h}
+        change7d={currency.percent_change_7d}/>)}
     </div>;
     return render;
   };
