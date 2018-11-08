@@ -11,6 +11,8 @@ const Buttons = (props) => {
     filter,
     handleTextChange,
     handleSort,
+    isListView,
+    toggleListView,
   } = props;
 
   const render = [
@@ -48,8 +50,11 @@ const Buttons = (props) => {
             placeholder="Filter by name or ticker"
             name="filter"
             value={filter}
-            handleChange={handleTextChange}/>}
-          />
+            handleChange={handleTextChange}/>}/>
+        <FadedLinesLayout
+          render={() => <Button
+            text={isListView ? 'Switch to Card View' : 'Switch to List View'}
+            handleClick={toggleListView}/>}/>
       </React.Fragment>}/>
   );
 };
@@ -59,6 +64,8 @@ Buttons.propTypes = {
   filter: PropTypes.string.isRequired,
   handleTextChange: PropTypes.func.isRequired,
   handleSort: PropTypes.func.isRequired,
+  isListView: PropTypes.bool.isRequired,
+  toggleListView: PropTypes.func.isRequired,
 };
 
 Buttons.defaultProps = {

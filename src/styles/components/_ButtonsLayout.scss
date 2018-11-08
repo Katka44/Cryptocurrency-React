@@ -1,4 +1,4 @@
 .ButtonsLayout {
-  @include grid(repeat(5, 1fr), 1rem);
+  @include grid(repeat(6, 1fr), 1rem);
   padding-bottom: 1rem;
 }

@@ -6,6 +6,7 @@ describe('ColorCode component', () => {
   const props = {
     text: '-5',
     className: '',
+    isListView: false,
   };
   const wrapper = shallow(<ColorCode {...props}/>);
 

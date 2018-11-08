@@ -20,7 +20,7 @@ class Main extends Component {
       filter: '',
       sortBy: null,
       message: '',
-      isListView: true,
+      isListView: false,
     };
   }
 
@@ -28,6 +28,11 @@ class Main extends Component {
     setInterval(() => {
       this.fetchData();
     }, 5000);
+  }
+
+  isSmallerThan = (limit) => {
+    const width = window.innerWidth;
+    return width < limit;
   }
 
   handleSort = (data, category) => {
@@ -76,6 +81,13 @@ class Main extends Component {
     });
   };
 
+  toggleListView = () => {
+    this.setState(prevState => ({
+      isListView: !prevState.isListView,
+    }));
+    console.log();
+  };
+
   manipulateOnRefetch = (data) => {
     const { filter, sortBy } = this.state;
     if (filter) {
@@ -118,7 +130,9 @@ class Main extends Component {
           data={data}
           filter={filter}
           handleTextChange={this.handleTextChange}
-          handleSort = {this.handleSort}/>
+          handleSort = {this.handleSort}
+          isListView={isListView}
+          toggleListView={this.toggleListView}/>
         <Message message={message}/>
         <ColorCodes isListView={isListView}/>
         {!data.length ? <Loader /> : <Tickers
