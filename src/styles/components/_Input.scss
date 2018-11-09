@@ -5,11 +5,13 @@
   color: $primary-color;
   padding: 1px 8px 1px 8px;
   box-sizing: content-box;
+  text-align: center;
 
   &::placeholder {
     font-family: $main-font-family;
     font-size: $button-input-font-size;
     color: $placeholder-color;
+    text-align: center;
   }
 
   &:focus {

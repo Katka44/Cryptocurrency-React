@@ -11,3 +11,23 @@
   margin: 30px 0 200px 0;
 }
 
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+  .Tickers-grid {
+    @include grid(repeat(20, 1fr), 2px, 15px, row dense);
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  .Tickers-grid {
+    @include grid(repeat(15, 1fr), 2px, 15px, row dense);
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  .Tickers-grid {
+    @include grid(repeat(10, 1fr), 2px, 15px, row dense);
+  }
+}
+@media screen and (max-width: 600px) {
+  .Tickers-grid {
+    @include grid(repeat(6, 1fr), 2px, 15px, row dense);
+  }
+}
