@@ -56,7 +56,7 @@ export const left = (divSize, coordX, gap) => {
   if (isEnoughSpace(coordX, gap, div)) {
     return Number(pointer + gap);
   }
-  return Number(pointer - gap - divSize);
+  return Number(pointer - gap - divSize) || 120;
 };
 
 export const addPlus = (number) => {

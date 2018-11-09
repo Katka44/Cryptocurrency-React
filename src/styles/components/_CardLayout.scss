@@ -33,16 +33,11 @@ $size-list: (
 // function returns a set of font-size styles
 
 $size-font-list: (
-  size-zero: 0.8rem,
-  size-thousand: 0.9rem,
-  size-ten-thousand: 1.0rem,
-  size-hundred-thousand: 1.0rem,
-  size-million: 1.0rem,
-  size-ten-million: 0.8rem,
-  size-hundred-million: 0.8rem,
-  size-billion: 0.8rem,
-  size-ten-billion: 0.9rem,
-  size-hundred-billion: 1rem,
+  size-ten-million: 0.6rem,
+  size-hundred-million: 0.7rem,
+  size-billion: 0.7rem,
+  size-ten-billion: 0.7rem,
+  size-hundred-billion: 0.8rem,
 );
 
 @each $key, $val in $size-font-list {

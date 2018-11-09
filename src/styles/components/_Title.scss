@@ -1,8 +1,14 @@
 .Title__h1 {
   margin: 30px 0 10px 0;
+  font-size: 1.5rem;
 }
-.Title__h2, .Title__h3 {
+.Title__h2 {
   margin: 15px 0 15px 0;
+  font-size: 1.1rem;
+}
+.Title__h3 {
+  margin: 15px 0 15px 0;
+  font-size: 1rem;
 }
 .Title__h1, .Title__h2, .Title__h3 {
   font-weight: normal;
