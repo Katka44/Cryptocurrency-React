@@ -1,6 +1,7 @@
 .TableRow {
   @include grid(repeat(7, 1fr), 0, auto, row);
   padding: 5px 0 5px 0;
+  border-bottom: 2px solid black;
 }
 .TableRow:nth-of-type(odd) {
   background-color: $secondary-color;

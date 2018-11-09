@@ -8,12 +8,12 @@ export const handleFilterFunc = (data, string) => {
 
 export const sortName = (data, order) => {
   const sortedArray = order === 'ascending'
-    ? data.sort((a, b) => {
+    ? [...data].sort((a, b) => {
       const nameA = a.name.toUpperCase();
       const nameB = b.name.toUpperCase();
       return (nameA > nameB) ? 1 : -1;
     })
-    : data.sort((a, b) => {
+    : [...data].sort((a, b) => {
       const nameA = a.name.toUpperCase();
       const nameB = b.name.toUpperCase();
       return (nameA > nameB) ? -1 : 1;
@@ -22,7 +22,7 @@ export const sortName = (data, order) => {
 };
 
 export const sortValue = (data, order, category) => {
-  const sortedArray = order === 'ascending' ? data.sort((a, b) => a[category] - b[category]) : data.sort((a, b) => b[category] - a[category]);
+  const sortedArray = order === 'ascending' ? [...data].sort((a, b) => a[category] - b[category]) : [...data].sort((a, b) => b[category] - a[category]);
   return sortedArray;
 };
 
