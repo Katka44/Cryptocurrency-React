@@ -21,7 +21,7 @@ class Main extends Component {
       filter: '',
       sortBy: null,
       message: '',
-      isListView: false,
+      isListView: true,
     };
   }
 

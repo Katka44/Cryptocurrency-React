@@ -7,6 +7,8 @@ import {
   left,
   addPlus,
   getPerformanceClass,
+  addCardToString,
+  addListToString,
   getSizeClass,
 } from '../handlers';
 
@@ -22,6 +24,7 @@ describe('handlers', () => {
       expect(handleFilterFunc(data, string)).toEqual(result);
     });
   });
+
   describe('sortName', () => {
     describe('nameA > nameB', () => {
       let data;
@@ -48,6 +51,7 @@ describe('handlers', () => {
         expect(sortName(data, order)).toEqual(result);
       });
     });
+
     describe('nameB > nameA', () => {
       let data;
       beforeEach(() => {
@@ -74,6 +78,7 @@ describe('handlers', () => {
       });
     });
   });
+
   describe('sortValue', () => {
     describe('rankB > rankA', () => {
       const data = [
@@ -99,6 +104,7 @@ describe('handlers', () => {
         expect(sortValue(data, order, category)).toEqual(result);
       });
     });
+
     describe('rankA > rankB', () => {
       const data = [
         { name: 'Ethereum', rank: 2 },
@@ -124,6 +130,7 @@ describe('handlers', () => {
       });
     });
   });
+
   describe('displayCategory', () => {
     it('should return correct string "name"', () => {
       const category = 'name';
@@ -146,6 +153,7 @@ describe('handlers', () => {
       expect(displayCategory(category)).toEqual(null);
     });
   });
+
   describe('isEnoughSpace', () => {
     it('should return true if there is enough space', () => {
       const coordX = 0;
@@ -160,6 +168,7 @@ describe('handlers', () => {
       expect(isEnoughSpace(coordX, gap, div)).toEqual(false);
     });
   });
+
   describe('left', () => {
     it('should return the X coordinate of Tooltip if isEnoughSpace', () => {
       const divSize = 250;
@@ -173,7 +182,14 @@ describe('handlers', () => {
       const gap = 100;
       expect(left(divSize, coordX, gap)).toEqual(1650);
     });
+    it('should return 120 if no arguments are provided', () => {
+      const divSize = undefined;
+      const coordX = undefined;
+      const gap = undefined;
+      expect(left(divSize, coordX, gap)).toEqual(120);
+    });
   });
+
   describe('addPlus', () => {
     it('should return a string with added plus symbol if number is positive', () => {
       const number = 1;
@@ -184,6 +200,7 @@ describe('handlers', () => {
       expect(addPlus(number)).toEqual(-1);
     });
   });
+
   describe('getPerformanceClass', () => {
     it('should return "minus-five" if performance is <= -5', () => {
       const performance = -6;
@@ -214,6 +231,21 @@ describe('handlers', () => {
       expect(getPerformanceClass(performance)).toEqual('plus-five');
     });
   });
+
+  describe('addCardToString', () => {
+    it('should return a string with appended "-card" to the given argument', () => {
+      const string = 'random';
+      expect(addCardToString(string)).toEqual(`${string}-card`);
+    });
+  });
+
+  describe('addListToString', () => {
+    it('should return a string with appended "-list" to the given argument', () => {
+      const string = 'random';
+      expect(addListToString(string)).toEqual(`${string}-list`);
+    });
+  });
+
   describe('getSizeClass', () => {
     it('should return "size-zero" if marketCap is <= 1000', () => {
       const marketCap = 950;

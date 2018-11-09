@@ -13,7 +13,7 @@ const TableRow = (props) => {
     <p className="TableRow-content TableRow-rank">{rank}</p>
     <p className="TableRow-content">{symbol}</p>
     <p className="TableRow-content TableRow-name">{name}</p>
-    <p className="TableRow-content">{price}</p>
+    <p className="TableRow-content">{`$${price}`}</p>
     <p className={isHeader
       ? 'TableRow-content TableRow-change1h'
       : `TableRow-content TableRow-change1h ${performance(change1h)}`}>

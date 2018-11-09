@@ -8,8 +8,11 @@ describe('ColorCode component', () => {
     className: '',
     isListView: false,
   };
-  const wrapper = shallow(<ColorCode {...props}/>);
-
+  let wrapper;
+  beforeEach(() => {
+    jest.clearAllMocks();
+    wrapper = shallow(<ColorCode {...props}/>);
+  });
   it('should contain a li', () => {
     expect(wrapper.find('li')).toHaveLength(1);
   });
@@ -20,4 +23,17 @@ describe('ColorCode component', () => {
   it('should contain a li with props.text as child element', () => {
     expect(wrapper.find('li').text()).toEqual(props.text);
   });
+  it('should contain a li with correct title attribute', () => {
+    const mockIsListView = true;
+    wrapper.setProps({ isListView: mockIsListView });
+    const title = 'Color indicates price change.';
+    expect(wrapper.find('li').props()).toHaveProperty('title', title);
+  });
+  it('should contain a li with correct title attribute', () => {
+    const mockIsListView = false;
+    wrapper.setProps({ isListView: mockIsListView });
+    const title = 'Color indicates 24h price change.';
+    expect(wrapper.find('li').props()).toHaveProperty('title', title);
+  });
+
 });
