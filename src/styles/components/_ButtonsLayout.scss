@@ -3,6 +3,7 @@
   background-color: $background-color;
   padding: 10px 0 10px 0;
 }
+
 @media screen and (max-width: 800px) {
   .ButtonsLayout {
     @include grid(repeat(3, 1fr), 10px, 40px, row);

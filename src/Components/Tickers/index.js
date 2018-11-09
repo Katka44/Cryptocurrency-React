@@ -13,13 +13,17 @@ const Tickers = (props) => {
   };
 
   const renderTable = (data) => {
+    const windowWidth = window.innerWidth;
+    const offset = windowWidth > 600 ? 150 : 200;
+    const topOffset = windowWidth > 800 ? 100 : offset;
+
     const render = <div className="Tickers-table">
     <StickyContainer>
-      <Sticky topOffset={-100}>
+      <Sticky topOffset={-topOffset - 50}>
         {({ style }) => (
           <div style={{
             ...style,
-            top: `${style.top + 100}px`,
+            top: `${topOffset}px`,
           }}>
             <TableRow
               isHeader
