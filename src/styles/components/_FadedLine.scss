@@ -6,6 +6,10 @@
 }
 
 .Faded-lines-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
   .Faded-line {
     background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from($placeholder-color), to($background-color));
   }

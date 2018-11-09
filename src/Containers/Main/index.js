@@ -125,7 +125,7 @@ class Main extends Component {
       <StickyContainer>
         <Title
           size="h3"
-          text={`There are ${data.length} coins on the market`} />
+          text={data.length ? `There are ${data.length} coins on the market` : ''} />
         <Sticky>
           {({ style }) => (
             <div style={style}>
