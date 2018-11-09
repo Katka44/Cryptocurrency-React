@@ -10,13 +10,13 @@ const TableRow = (props) => {
   const performance = priceChange => addListToString(getPerformanceClass(priceChange));
 
   return <div className="TableRow">
-    <p>{rank}</p>
-    <p>{symbol}</p>
-    <p>{name}</p>
-    <p>{price}</p>
-    <p className={isHeader ? '' : performance(change1h)}>{isHeader ? change1h : `${addPlus(change1h)}%`}</p>
-    <p className={isHeader ? '' : performance(change24h)}>{isHeader ? change24h : `${addPlus(change24h)}%`}</p>
-    <p className={isHeader ? '' : performance(change7d)}>{isHeader ? change7d : `${addPlus(change7d)}%`}</p>
+    <p className="TableRow-content">{rank}</p>
+    <p className="TableRow-content">{symbol}</p>
+    <p className="TableRow-content">{name}</p>
+    <p className="TableRow-content">{price}</p>
+    <p className={isHeader ? 'TableRow-content' : `TableRow-content ${performance(change1h)}`}>{isHeader ? change1h : `${addPlus(change1h)}%`}</p>
+    <p className={isHeader ? 'TableRow-content' : `TableRow-content ${performance(change24h)}`}>{isHeader ? change24h : `${addPlus(change24h)}%`}</p>
+    <p className={isHeader ? 'TableRow-content' : `TableRow-content ${performance(change7d)}`}>{isHeader ? change7d : `${addPlus(change7d)}%`}</p>
   </div>;
 };
 

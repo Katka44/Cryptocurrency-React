@@ -3,7 +3,6 @@
 }
 
 // function returns a set of grid-area styles
-
 $size-list: (
   size-zero: span 1 / span 1,
   size-thousand: span 2 / span 1,
@@ -23,15 +22,7 @@ $size-list: (
   }
 }
 
-// returns
-// .size-zero {
-//   grid-area: span 1 / span 1;
-// }
-// ...
-
-
 // function returns a set of font-size styles
-
 $size-font-list: (
   size-ten-million: 0.6rem,
   size-hundred-million: 0.7rem,
@@ -45,9 +36,3 @@ $size-font-list: (
     font-size: #{$val};
   }
 }
-
-// returns
-// .Card-content--size-zero {
-//   font-size: 0.8rem;
-// }
-// ...
