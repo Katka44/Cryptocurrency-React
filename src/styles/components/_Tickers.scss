@@ -1,5 +1,5 @@
 .Tickers-grid {
-  @include grid(repeat(15, 1fr), 2px, 25px, row dense);
+  @include grid(repeat(25, 1fr), 2px, 15px, row dense);
   margin: 30px 0 200px 0;
 }
 .Tickers-grid--sorted {

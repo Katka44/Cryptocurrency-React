@@ -1,3 +1,6 @@
+.Card-layout {
+  padding: 2px;
+}
 
 // function returns a set of grid-area styles
 
@@ -35,11 +38,11 @@ $size-font-list: (
   size-ten-thousand: 1.0rem,
   size-hundred-thousand: 1.0rem,
   size-million: 1.0rem,
-  size-ten-million: 1.1rem,
-  size-hundred-million: 1.2rem,
-  size-billion: 1.3rem,
-  size-ten-billion: 1.4rem,
-  size-hundred-billion: 1.5rem,
+  size-ten-million: 0.8rem,
+  size-hundred-million: 0.8rem,
+  size-billion: 0.8rem,
+  size-ten-billion: 0.9rem,
+  size-hundred-billion: 1rem,
 );
 
 @each $key, $val in $size-font-list {

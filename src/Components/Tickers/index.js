@@ -18,7 +18,6 @@ const Tickers = (props) => {
       <Sticky topOffset={-100}>
         {({ style }) => (
           <div style={{
-            height: "56",
             ...style,
             top: `${style.top + 100}px`,
           }}>

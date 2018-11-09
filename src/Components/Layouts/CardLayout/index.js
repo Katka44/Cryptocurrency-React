@@ -22,7 +22,7 @@ const CardLayout = (props) => {
 
   return (
     <div
-      className={`${performance} ${size}`}
+      className={`Card-layout ${performance} ${size}`}
       onMouseEnter={() => setHover(data)}
       onMouseMove={handleHover}
       onMouseLeave={resetHover} >
