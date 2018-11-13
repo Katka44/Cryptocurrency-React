@@ -15,7 +15,7 @@ const Input = (props) => {
       type="text"
       name={name}
       value={value}
-      onChange={(e) => { handleChange(e); } }
+      onChange={handleChange}
       placeholder={placeholder}/>
   );
 };

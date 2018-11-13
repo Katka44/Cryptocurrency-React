@@ -3,6 +3,7 @@
 @import './variables/variables';
 
 // import mixins
+
 @import './mixins/mixins';
 
 // import functions
@@ -18,18 +19,25 @@
 @import './components/FadedLine';
 @import './components/Input';
 @import './components/Message';
+@import './components/TableRow';
 @import './components/Tickers';
 @import './components/Title';
 @import './components/Tooltip';
 
 // App.js style
 
+:root {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
 body {
   font-family: $main-font-family;
   background-color: $background-color;
   color: $primary-color;
-  width: 80%;
-  min-width: 700px;
+  width: 80vw;
+
   margin: auto;
 }
 .App {
@@ -41,4 +49,20 @@ ul {
   cursor: context-menu;
   display: flex;
   padding: 0;
+}
+
+@media screen and (min-width: 320px) {
+  :root {
+    font-size: calc(16px + 6 * (80vw - 320px) / 680);
+  }
+}
+@media screen and (min-width: 1000px) {
+  :root {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 400px) {
+  body {
+    width: 100vw;
+  }
 }

@@ -19,13 +19,15 @@ const Button = (props) => {
 
 Button.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape({})),
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
   handleClick: PropTypes.func.isRequired,
-  category: PropTypes.string.isRequired,
+  category: PropTypes.string,
 };
 
 Button.defaultProps = {
   data: null,
+  text: null,
+  category: null,
 };
 
 export default Button;

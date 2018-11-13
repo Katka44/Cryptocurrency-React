@@ -6,16 +6,20 @@
   flex-direction: column;
   padding: 15px;
   text-align: left;
-}
-.Tooltip__content {
-  margin: 0;
-}
-.Tooltip__name {
-  font-size: 1.3rem;
-}
-.Tooltip__price {
-  font-size: 1.5rem;
-  font-weight: bold;
+
+  &__content {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+
+  &__name {
+    font-size: 1.1rem;
+  }
+
+  &__price {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
 }
 .animate {
   -webkit-animation: SHOW 0.1s;

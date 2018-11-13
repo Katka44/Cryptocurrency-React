@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { StickyContainer, Sticky } from 'react-sticky';
 import Title from '../../Components/Title';
 import Buttons from '../Buttons';
 import Message from '../../Components/Message';
@@ -20,6 +21,7 @@ class Main extends Component {
       filter: '',
       sortBy: null,
       message: '',
+      isListView: true,
     };
   }
 
@@ -27,6 +29,11 @@ class Main extends Component {
     setInterval(() => {
       this.fetchData();
     }, 5000);
+  }
+
+  isSmallerThan = (limit) => {
+    const width = window.innerWidth;
+    return width < limit;
   }
 
   handleSort = (data, category) => {
@@ -75,6 +82,12 @@ class Main extends Component {
     });
   };
 
+  toggleListView = () => {
+    this.setState(prevState => ({
+      isListView: !prevState.isListView,
+    }));
+  };
+
   manipulateOnRefetch = (data) => {
     const { filter, sortBy } = this.state;
     if (filter) {
@@ -105,24 +118,33 @@ class Main extends Component {
       message,
       filter,
       sortBy,
+      isListView,
     } = this.state;
 
     return (
-      <React.Fragment>
+      <StickyContainer>
         <Title
           size="h3"
-          text={`There are ${data.length} coins on the market`} />
-        <Buttons
-          data={data}
-          filter={filter}
-          handleTextChange={this.handleTextChange}
-          handleSort = {this.handleSort}/>
-        <Message message={message}/>
-        <ColorCodes />
-        {!data.length ? <Loader /> : <Tickers
-          manipulatedData = {manipulatedData}
-          sortBy={sortBy}/>}
-      </React.Fragment>
+          text={data.length ? `There are ${data.length} coins on the market` : ''} />
+        <Sticky>
+          {({ style }) => (
+            <div style={style}>
+              <Buttons
+              data={data}
+              filter={filter}
+              handleTextChange={this.handleTextChange}
+              handleSort = {this.handleSort}
+              isListView={isListView}
+              toggleListView={this.toggleListView}/>
+              <Message message={message}/>
+            </div>)}
+        </Sticky>
+        <ColorCodes isListView={isListView}/>
+          {!data.length ? <Loader /> : <Tickers
+            manipulatedData = {manipulatedData}
+            sortBy={sortBy}
+            isListView={isListView}/>}
+      </StickyContainer>
     );
   }
 }

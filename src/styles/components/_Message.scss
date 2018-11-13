@@ -1,6 +1,11 @@
 .Message {
 	height: 20px;
-}
-.Message__text {
-	text-align: center;
+	background-color: $background-color;
+	padding: 15px 0 15px 0;
+  
+  &__text {
+    margin: 0;
+    text-align: center;
+    font-size: 0.8rem;
+  }
 }

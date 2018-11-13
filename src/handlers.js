@@ -8,12 +8,12 @@ export const handleFilterFunc = (data, string) => {
 
 export const sortName = (data, order) => {
   const sortedArray = order === 'ascending'
-    ? data.sort((a, b) => {
+    ? [...data].sort((a, b) => {
       const nameA = a.name.toUpperCase();
       const nameB = b.name.toUpperCase();
       return (nameA > nameB) ? 1 : -1;
     })
-    : data.sort((a, b) => {
+    : [...data].sort((a, b) => {
       const nameA = a.name.toUpperCase();
       const nameB = b.name.toUpperCase();
       return (nameA > nameB) ? -1 : 1;
@@ -22,7 +22,7 @@ export const sortName = (data, order) => {
 };
 
 export const sortValue = (data, order, category) => {
-  const sortedArray = order === 'ascending' ? data.sort((a, b) => a[category] - b[category]) : data.sort((a, b) => b[category] - a[category]);
+  const sortedArray = order === 'ascending' ? [...data].sort((a, b) => a[category] - b[category]) : [...data].sort((a, b) => b[category] - a[category]);
   return sortedArray;
 };
 
@@ -56,7 +56,7 @@ export const left = (divSize, coordX, gap) => {
   if (isEnoughSpace(coordX, gap, div)) {
     return Number(pointer + gap);
   }
-  return Number(pointer - gap - divSize);
+  return Number(pointer - gap - divSize) || 120;
 };
 
 export const addPlus = (number) => {
@@ -87,6 +87,11 @@ export const getPerformanceClass = (performance) => {
   }
   return 'plus-five';
 };
+
+export const addCardToString = string => `${string}-card`;
+
+export const addListToString = string => `${string}-list`;
+
 
 export const getSizeClass = (marketCap) => {
   if (marketCap <= 1000) {

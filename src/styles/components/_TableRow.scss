@@ -1,0 +1,76 @@
+// @mixin auto-remove-fields() {
+//   $columns: 20;
+
+//   $hide-fields: (
+//     change7d: 700px,
+//     rank: 600px,
+//     name: 500px,
+//     change1h: 400px,
+//   );
+  
+//   @each $key, $val in $hide-fields {
+//     @media screen and (max-width: $val) {
+//       .TableRow {
+//         @include grid(repeat(20, 1fr), 0, auto, row);
+
+//         &-#{$key} {
+//           display: none;
+//         }
+//       }
+//     }
+//     $columns: $columns - 1;
+//   }
+// };
+
+.TableRow {
+  @include grid(repeat(7, 1fr), 0, auto, row);
+  padding: 3px 0 3px 0;
+  border-bottom: 2px solid black;
+
+  &:nth-of-type(odd) {
+    background-color: $secondary-color;
+  }
+
+  &-content {
+    font-size: 0.8rem;
+    margin: 7px;
+  }
+  // @include auto-remove-fields();
+}
+
+@media screen and (max-width: 700px) {
+  .TableRow {
+    @include grid(repeat(6, 1fr), 0, auto, row);
+    
+    &-change7d {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .TableRow {
+    @include grid(repeat(5, 1fr), 0, auto, row);
+    
+    &-rank {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .TableRow {
+    @include grid(repeat(4, 1fr), 0, auto, row);
+    
+    &-name {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .TableRow {
+    @include grid(repeat(3, 1fr), 0, auto, row);
+    
+    &-change1h {
+      display: none;
+    }
+  }
+}

@@ -32,6 +32,10 @@ const Tooltip = (props) => {
       className: 'Tooltip__content',
       child: `24h change: ${hoveredObject.percent_change_24h}%`,
     },
+    {
+      className: 'Tooltip__content',
+      child: `7d change: ${hoveredObject.percent_change_7d}%`,
+    },
   ];
   return (
     <SizeMe>

@@ -1,16 +1,20 @@
 .Faded-line {
   border: none;
   height: 1px;
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from($plus-three-color), to($background-color));
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from($card-plus-three-color), to($background-color));
   margin: 0;
 }
 
 .Faded-lines-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
   .Faded-line {
     background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from($placeholder-color), to($background-color));
   }
 
   &:hover .Faded-line {
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from($plus-three-color), to($background-color));
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from($card-plus-three-color), to($background-color));
   }
 }

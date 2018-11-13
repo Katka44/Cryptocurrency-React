@@ -1,18 +1,29 @@
 // font
 $main-font-family: "Exo 2", sans-serif, Arial;
-$button-input-font-size: 0.8rem;
+$button-input-font-size: 0.7rem;
   
 // colors
 $background-color: black;
   
 $primary-color: white;
+$secondary-color: #303030;
 
 $placeholder-color: grey;
 
-$minus-five-color: #F63538;
-$minus-three-color: #BF4045;
-$minus-one-color: #8B444E;
-$zero-color:#4F4554;
-$plus-one-color: #35764E;
-$plus-three-color: #2F9E4E;
-$plus-five-color: #30CC5A;
+// heatmap colors for card view
+$card-minus-five-color: #F63538;
+$card-minus-three-color: #BF4045;
+$card-minus-one-color: #8B444E;
+$card-zero-color:#4F4554;
+$card-plus-one-color: #35764E;
+$card-plus-three-color: #2F9E4E;
+$card-plus-five-color: #30CC5A;
+
+// heatmap colors for list view
+$list-minus-five-color: #CE0E0E;
+$list-minus-three-color: #E15454;
+$list-minus-one-color: #F29595;
+$list-zero-color:#E8E8E8;
+$list-plus-one-color: #92F792;
+$list-plus-three-color: #71FA71;
+$list-plus-five-color: #0BC00B;

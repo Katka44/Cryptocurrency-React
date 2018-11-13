@@ -7,10 +7,16 @@ const CardContent = (props) => {
 
   // eslint-disable-next-line camelcase
   const { symbol, percent_change_24h } = data;
+
+  const sizesWithText = () => ['size-hundred-billion', 'size-ten-billion', 'size-billion', 'size-hundred-million', 'size-ten-million'];
+
   return (
     <li>
-      {size !== 'size-zero'
-        ? <p className={`Card-content Card-content--${size}`}>{symbol} {addPlus(percent_change_24h)}%</p>
+      {sizesWithText().includes(size)
+        ? <p
+            className={`Card-content Card-content--${size}`}>
+            {symbol} {addPlus(percent_change_24h)}%
+          </p>
         : null}
     </li>
   );
