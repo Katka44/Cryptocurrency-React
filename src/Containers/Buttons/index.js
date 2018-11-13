@@ -15,7 +15,7 @@ const Buttons = (props) => {
     toggleListView,
   } = props;
 
-  const render = [
+  const renderItems = [
     {
       text: 'Sort By Name',
       category: 'name',
@@ -37,7 +37,7 @@ const Buttons = (props) => {
   return (
     <ButtonsLayout
       render={() => <React.Fragment>
-        {render.map(item => <FadedLinesLayout
+        {renderItems.map(item => <FadedLinesLayout
           key={item.category}
           render={() => <Button
             data={data}

@@ -18,15 +18,16 @@ describe('ColorCodes component', () => {
   it('should render ColorCodesLayout', () => {
     expect(wrapper.find(ColorCodesLayout)).toHaveLength(1);
   });
-  /*
-  it('should render a ul', () => {
-    const child = <ul>Random</ul>;
-    const render = jest.fn().mockReturnValue(child);
-    const layoutProps = () => ({
-      render,
-    });
-    const mockColorCodesLayout = shallow(<ColorCodesLayout {...layoutProps()}/>);
-    expect(wrapper.find('ul')).toHaveLength(1);
+  it('should render a ul as a child of ColorCodesLayout', () => {
+    expect(wrapper.dive().find('ul')).toHaveLength(1);
   });
-  */
+  it('should render 7 instances of ColorCode', () => {
+    expect(wrapper.dive().find(ColorCode)).toHaveLength(7);
+  });
+  it('should render ColorCode with -list in its className', () => {
+    const mockIsListView = true;
+    wrapper.setProps({ isListView: mockIsListView });
+    const className = 'minus-five-list';
+    expect(wrapper.dive().find(ColorCode).first().props()).toHaveProperty('className', className);
+  });
 });

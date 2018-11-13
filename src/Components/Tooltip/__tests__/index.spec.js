@@ -19,18 +19,10 @@ describe('Tooltip component', () => {
   it('should contain a SizeMe element', () => {
     expect(wrapper.find(SizeMe)).toHaveLength(1);
   });
-  /*
   it('should contain a div', () => {
-    const size = { width: 100, height: 100 };
-    const div = shallow(wrapper.instance().someNameFunc(size));
-    expect(wrapper.find(div)).toHaveLength(1);
+    expect(wrapper.dive().find('div')).toHaveLength(1);
   });
-  it('should contain a div with correct className', () => {
-    const className = 'Tooltip animate';
-    expect(wrapper.find('div').hasClass(className)).toEqual(true);
+  it('should contain 7 instances of p tags', () => {
+    expect(wrapper.dive().find('p')).toHaveLength(7);
   });
-  it('should contain 7 p tags', () => {
-    expect(wrapper.find('p')).toHaveLength(7);
-  });
-  */
 });

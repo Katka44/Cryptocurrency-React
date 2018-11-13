@@ -5,7 +5,7 @@ import ColorCode from '../../Components/ColorCode';
 
 const ColorCodes = (props) => {
   const { isListView } = props;
-  const render = [
+  const renderItems = [
     {
       text: '-5%',
       classNameCardView: 'minus-five-card',
@@ -46,7 +46,7 @@ const ColorCodes = (props) => {
 
   return <ColorCodesLayout
     render={() => <ul>
-      {render.map(item => <ColorCode
+      {renderItems.map(item => <ColorCode
         key={item.text}
         text={item.text}
         className={isListView ? item.classNameListView : item.classNameCardView}

@@ -6,10 +6,10 @@ import TableRow from '../TableRow';
 
 const Tickers = (props) => {
   const renderCards = (data) => {
-    const render = data.map(currency => <Card
+    const renderItems = data.map(currency => <Card
       data={currency}
       key={currency.id}/>);
-    return render;
+    return renderItems;
   };
 
   const renderTable = (data) => {
