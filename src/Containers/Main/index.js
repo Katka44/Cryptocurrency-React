@@ -31,11 +31,6 @@ class Main extends Component {
     }, 5000);
   }
 
-  isSmallerThan = (limit) => {
-    const width = window.innerWidth;
-    return width < limit;
-  }
-
   handleSort = (data, category) => {
     const { sortBy } = this.state;
     let order;

@@ -1,27 +1,3 @@
-// @mixin auto-remove-fields() {
-//   $columns: 20;
-
-//   $hide-fields: (
-//     change7d: 700px,
-//     rank: 600px,
-//     name: 500px,
-//     change1h: 400px,
-//   );
-  
-//   @each $key, $val in $hide-fields {
-//     @media screen and (max-width: $val) {
-//       .TableRow {
-//         @include grid(repeat(20, 1fr), 0, auto, row);
-
-//         &-#{$key} {
-//           display: none;
-//         }
-//       }
-//     }
-//     $columns: $columns - 1;
-//   }
-// };
-
 .TableRow {
   @include grid(repeat(7, 1fr), 0, auto, row);
   padding: 3px 0 3px 0;
