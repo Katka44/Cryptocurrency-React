@@ -35,5 +35,4 @@ describe('ColorCode component', () => {
     const title = 'Color indicates 24h price change.';
     expect(wrapper.find('li').props()).toHaveProperty('title', title);
   });
-
 });

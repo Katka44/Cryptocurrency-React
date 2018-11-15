@@ -40,7 +40,7 @@ describe('TableRow component', () => {
     expect(wrapper.find('div').find('p').at(2).text()).toEqual('Bitcoin');
   });
   it('should contain a p tag with props.price as text', () => {
-    expect(wrapper.find('div').find('p').at(3).text()).toEqual('$6000');
+    expect(wrapper.find('div').find('p').at(3).text()).toEqual('6000');
   });
   it('should contain a p tag with `props.change1h + %` as text', () => {
     expect(wrapper.find('div').find('p').at(4).text()).toEqual('0%');
